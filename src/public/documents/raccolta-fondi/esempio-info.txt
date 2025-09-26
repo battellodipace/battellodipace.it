@@ -1,0 +1,9 @@
+# File di esempio per la cartella raccolta-fondi
+
+Questa è la cartella per materiali sulla raccolta fondi come:
+- Informazioni su Emergency
+- Informazioni su Medici Senza Frontiere
+- Rendiconti donazioni
+- Modalità di donazione
+
+Sostituire questo file con i materiali reali della raccolta fondi.

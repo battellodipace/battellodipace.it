@@ -1,0 +1,42 @@
+[
+  {
+    "nome": "Associazione Artigiani di Pace",
+    "tipo": "Associazione",
+    "descrizione": "Organizzatori principali dell'evento"
+  },
+  {
+    "nome": "Centro Sociale Verbania",
+    "tipo": "Centro Sociale",
+    "descrizione": "Sostegno logistico e organizzativo"
+  },
+  {
+    "nome": "Comitato per la Pace del Lago Maggiore",
+    "tipo": "Comitato",
+    "descrizione": "Coordinamento territoriale"
+  },
+  {
+    "nome": "Emergency - Sezione Lago Maggiore",
+    "tipo": "ONG",
+    "descrizione": "Beneficiario della raccolta fondi"
+  },
+  {
+    "nome": "Gruppo Giovani per la Pace",
+    "tipo": "Gruppo Giovanile",
+    "descrizione": "Animazione e sensibilizzazione"
+  },
+  {
+    "nome": "Istituto Comprensivo di Arona",
+    "tipo": "Scuola",
+    "descrizione": "Partecipazione studenti"
+  },
+  {
+    "nome": "Movimento Nonviolento",
+    "tipo": "Movimento",
+    "descrizione": "Supporto ideologico e organizzativo"
+  },
+  {
+    "nome": "Parrocchia San Carlo Borromeo",
+    "tipo": "Parrocchia",
+    "descrizione": "Sostegno spirituale e comunitario"
+  }
+]

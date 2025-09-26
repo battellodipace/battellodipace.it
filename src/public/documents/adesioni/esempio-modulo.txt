@@ -1,0 +1,9 @@
+# File di esempio per la cartella adesioni
+
+Questa è la cartella per documenti di adesione come:
+- Moduli per organizzazioni
+- Moduli per cittadini
+- Istruzioni per l'adesione
+- Liste organizzazioni aderenti
+
+Sostituire questo file con i moduli reali dell'evento.

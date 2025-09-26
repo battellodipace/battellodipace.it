@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battello di Pace 2025 - Lago Maggiore</title>
+    <meta name="description" content="Battello di Pace - 11 ottobre 2025 sul Lago Maggiore. Unisciti a noi per un viaggio di pace e solidarietà.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        background: '#ffffff',
+                        foreground: 'oklch(0.145 0 0)',
+                        card: '#ffffff',
+                        'card-foreground': 'oklch(0.145 0 0)',
+                        primary: '#030213',
+                        'primary-foreground': 'oklch(1 0 0)',
+                        border: 'rgba(0, 0, 0, 0.1)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Variabili CSS custom per mantenere coerenza con l'app React */
+        :root {
+            --font-size: 16px;
+            --background: #ffffff;
+            --foreground: oklch(0.145 0 0);
+            --card: #ffffff;
+            --card-foreground: oklch(0.145 0 0);
+            --primary: #030213;
+            --primary-foreground: oklch(1 0 0);
+            --border: rgba(0, 0, 0, 0.1);
+        }
+
+        /* Gradienti per il titolo "Battello di Pace" */
+        .battello-gradient {
+            background: linear-gradient(90deg, #FF6B35 0%, #F7931E 30%, #FFD60A 60%, #32CD32 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .di-pace-gradient {
+            background: linear-gradient(90deg, #1E88E5 0%, #3F51B5 50%, #8E24AA 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+        }
+
+        /* Stili per il dropdown menu */
+        .dropdown-menu {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.2s ease-in-out;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        /* Nascondere tutte le pagine tranne quella attiva */
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        /* Stili per mobile menu */
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out;
+        }
+
+        .mobile-menu.open {
+            max-height: 500px;
+        }
+
+        /* Hover effects per le card */
+        .hover-shadow:hover {
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        /* Background hero con immagine placeholder */
+        .hero-bg {
+            background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body class="bg-background text-foreground">
+    <div class="min-h-screen flex flex-col">
+        <!-- Header -->
+        <header class="bg-white shadow-md sticky top-0 z-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center py-4">
+                    <!-- Logo -->
+                    <div class="cursor-pointer" onclick="changePage('home')">
+                        <div class="flex items-center space-x-3">
+                            <!-- Placeholder per logo - sostituire con immagine reale -->
+                            <div class="w-12 h-12 bg-gradient-to-br from-orange-400 to-purple-600 rounded-full flex items-center justify-center text-white font-bold">B</div>
+                            <div>
+                                <h1 class="text-2xl font-bold">
+                                    <span class="battello-gradient">BATTELLO</span>
+                                    <span class="di-pace-gradient">DI PACE</span>
+                                </h1>
+                                <p class="text-blue-600 text-sm">11 ottobre 2025</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Desktop Navigation -->
+                    <nav class="hidden lg:flex space-x-8">
+                        <button onclick="changePage('home')" class="nav-item px-3 py-2 rounded-md transition-colors text-gray-700 hover:text-blue-600" data-page="home">
+                            Home
+                        </button>
+                        <button onclick="changePage('battello')" class="nav-item px-3 py-2 rounded-md transition-colors text-gray-700 hover:text-blue-600" data-page="battello">
+                            Il Battello
+                        </button>
+                        <div class="relative dropdown">
+                            <button class="nav-item px-3 py-2 rounded-md transition-colors text-gray-700 hover:text-blue-600" data-page="presidi">
+                                Presidi Locali
+                            </button>
+                            <div class="dropdown-menu absolute left-0 mt-1 w-48 bg-white rounded-md shadow-lg">
+                                <div class="py-1">
+                                    <button onclick="changePage('angera')" class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Angera</button>
+                                    <button onclick="changePage('arona')" class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Arona</button>
+                                    <button onclick="changePage('baveno')" class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Baveno</button>
+                                    <button onclick="changePage('verbania')" class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Verbania Intra</button>
+                                </div>
+                            </div>
+                        </div>
+                        <button onclick="changePage('adesioni')" class="nav-item px-3 py-2 rounded-md transition-colors text-gray-700 hover:text-blue-600" data-page="adesioni">
+                            Adesioni
+                        </button>
+                        <button onclick="changePage('news')" class="nav-item px-3 py-2 rounded-md transition-colors text-gray-700 hover:text-blue-600" data-page="news">
+                            News
+                        </button>
+                        <button onclick="changePage('contatti')" class="nav-item px-3 py-2 rounded-md transition-colors text-gray-700 hover:text-blue-600" data-page="contatti">
+                            Contatti
+                        </button>
+                    </nav>
+
+                    <!-- Mobile menu button -->
+                    <button id="mobile-menu-button" class="lg:hidden p-2 rounded-md text-gray-700 hover:text-blue-600">
+                        <svg id="menu-icon" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                        <svg id="close-icon" class="h-6 w-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Mobile Navigation -->
+                <div id="mobile-menu" class="mobile-menu lg:hidden pb-4">
+                    <div class="space-y-2">
+                        <button onclick="changePage('home'); toggleMobileMenu()" class="block w-full text-left px-3 py-2 rounded-md text-gray-700 hover:text-blue-600">Home</button>
+                        <button onclick="changePage('battello'); toggleMobileMenu()" class="block w-full text-left px-3 py-2 rounded-md text-gray-700 hover:text-blue-600">Il Battello</button>
+                        <div class="ml-4 space-y-1">
+                            <button onclick="changePage('angera'); toggleMobileMenu()" class="block w-full text-left px-3 py-2 text-sm rounded-md text-gray-600 hover:text-blue-600">Angera</button>
+                            <button onclick="changePage('arona'); toggleMobileMenu()" class="block w-full text-left px-3 py-2 text-sm rounded-md text-gray-600 hover:text-blue-600">Arona</button>
+                            <button onclick="changePage('baveno'); toggleMobileMenu()" class="block w-full text-left px-3 py-2 text-sm rounded-md text-gray-600 hover:text-blue-600">Baveno</button>
+                            <button onclick="changePage('verbania'); toggleMobileMenu()" class="block w-full text-left px-3 py-2 text-sm rounded-md text-gray-600 hover:text-blue-600">Verbania Intra</button>
+                        </div>
+                        <button onclick="changePage('adesioni'); toggleMobileMenu()" class="block w-full text-left px-3 py-2 rounded-md text-gray-700 hover:text-blue-600">Adesioni</button>
+                        <button onclick="changePage('news'); toggleMobileMenu()" class="block w-full text-left px-3 py-2 rounded-md text-gray-700 hover:text-blue-600">News</button>
+                        <button onclick="changePage('contatti'); toggleMobileMenu()" class="block w-full text-left px-3 py-2 rounded-md text-gray-700 hover:text-blue-600">Contatti</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="flex-1">
+            <!-- HOME PAGE -->
+            <div id="home-page" class="page active">
+                <div class="min-h-screen">
+                    <!-- Hero Section -->
+                    <section class="hero-bg relative py-20 min-h-screen flex items-center">
+                        <!-- Overlay -->
+                        <div class="absolute inset-0 bg-black/20"></div>
+                        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10">
+                            <div class="text-center">
+                                <div class="mb-8">
+                                    <div class="mb-6">
+                                        <!-- Colomba della pace placeholder -->
+                                        <div class="w-32 h-32 mx-auto bg-gradient-to-br from-yellow-300 to-pink-300 rounded-full flex items-center justify-center text-6xl drop-shadow-lg">🕊️</div>
+                                    </div>
+                                    <h1 class="text-5xl md:text-7xl font-bold mb-4">
+                                        <span class="battello-gradient">BATTELLO</span>
+                                        <span class="di-pace-gradient">DI PACE</span>
+                                    </h1>
+                                    <p class="text-2xl md:text-3xl text-white font-semibold mb-2 drop-shadow-lg">
+                                        sabato 11 ottobre 2025
+                                    </p>
+                                    <p class="text-lg text-white max-w-3xl mx-auto drop-shadow-lg">
+                                        Unisciti al Battello di Pace che solca le acque del Lago Maggiore per unire territori e coscienze
+                                    </p>
+                                </div>
+                                
+                                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                                    <button onclick="changePage('angera')" class="bg-gradient-to-r from-blue-600 to-purple-600 hover:opacity-90 text-white px-8 py-3 text-lg shadow-lg transition-all duration-300 ease-in-out hover:scale-105 rounded-md">
+                                        Scopri le Tappe
+                                    </button>
+                                    <button onclick="changePage('adesioni')" class="bg-white/90 text-blue-600 hover:bg-white border-2 border-white px-8 py-3 text-lg shadow-lg font-semibold transition-all duration-300 ease-in-out hover:scale-105 rounded-md">
+                                        Aderisci all'Evento
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Descrizione Evento -->
+                    <section class="py-16 bg-white">
+                        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                                <div>
+                                    <h2 class="text-3xl font-bold text-gray-900 mb-6">
+                                        4 Tappe - 4 Presìdi
+                                    </h2>
+                                    <p class="text-lg text-gray-600 mb-6">
+                                        Ad ogni tappa un presidio. Ad ogni presidio il nostro impegno: insieme per denunciare il riarmo, la guerra e l'economia armata. Per chiedere il cessate il fuoco a Gaza e in ogni luogo di guerra. Per chiedere giustizia e imparare a costruire Pace nelle scelte di ogni giorno.
+                                    </p>
+                                    <div class="space-y-4">
+                                        <div class="flex items-center space-x-3">
+                                            <svg class="h-6 w-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                                            </svg>
+                                            <span class="text-gray-700">Reading teatrali, testimonianze dirette e musica</span>
+                                        </div>
+                                        <div class="flex items-center space-x-3">
+                                            <svg class="h-6 w-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+                                            </svg>
+                                            <span class="text-gray-700">Riflessioni condivise per coinvolgere la cittadinanza</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="relative">
+                                    <div class="bg-gradient-to-r from-blue-100 to-purple-100 rounded-2xl p-8">
+                                        <div class="text-center">
+                                            <div class="h-14 w-14 mx-auto mb-2 bg-gradient-to-br from-yellow-300 to-pink-300 rounded-full flex items-center justify-center text-2xl">🕊️</div>
+                                            <h3 class="text-xl font-semibold text-gray-900 mb-4">
+                                                Raccolta Fondi
+                                            </h3>
+                                            <p class="text-gray-600 mb-6">
+                                                Si organizzeranno raccolte fondi e l'intero ricavato sarà devoluto a Emergency e Medici Senza Frontiere.
+                                            </p>
+                                            <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+                                                <!-- Placeholder loghi Emergency e MSF -->
+                                                <div class="h-10 w-20 bg-red-500 rounded flex items-center justify-center text-white text-xs font-bold">EMERGENCY</div>
+                                                <div class="h-12 w-20 bg-blue-600 rounded flex items-center justify-center text-white text-xs font-bold">MSF</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Tappe -->
+                    <section class="py-16 bg-gray-50">
+                        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                            <div class="text-center mb-12">
+                                <h2 class="text-3xl font-bold text-gray-900 mb-4">Le Tappe del Viaggio</h2>
+                                <p class="text-lg text-gray-600">Quattro momenti di incontro, riflessione e impegno</p>
+                            </div>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                                <div class="bg-white p-6 rounded-lg shadow hover-shadow transition-shadow cursor-pointer" onclick="changePage('angera')">
+                                    <div class="text-center">
+                                        <div class="w-16 h-16 mx-auto rounded-full bg-gradient-to-r from-red-500 to-orange-500 flex items-center justify-center mb-4">
+                                            <svg class="h-8 w-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </div>
+                                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Angera</h3>
+                                        <p class="text-2xl font-bold text-blue-600 mb-2">h. 9:30</p>
+                                        <p class="text-sm text-gray-500">Tappa 1</p>
+                                    </div>
+                                </div>
+                                <div class="bg-white p-6 rounded-lg shadow hover-shadow transition-shadow cursor-pointer" onclick="changePage('arona')">
+                                    <div class="text-center">
+                                        <div class="w-16 h-16 mx-auto rounded-full bg-gradient-to-r from-orange-500 to-yellow-500 flex items-center justify-center mb-4">
+                                            <svg class="h-8 w-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </div>
+                                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Arona</h3>
+                                        <p class="text-2xl font-bold text-blue-600 mb-2">h. 10:30</p>
+                                        <p class="text-sm text-gray-500">Tappa 2</p>
+                                    </div>
+                                </div>
+                                <div class="bg-white p-6 rounded-lg shadow hover-shadow transition-shadow cursor-pointer" onclick="changePage('baveno')">
+                                    <div class="text-center">
+                                        <div class="w-16 h-16 mx-auto rounded-full bg-gradient-to-r from-green-500 to-blue-500 flex items-center justify-center mb-4">
+                                            <svg class="h-8 w-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </div>
+                                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Baveno</h3>
+                                        <p class="text-2xl font-bold text-blue-600 mb-2">h. 12:00</p>
+                                        <p class="text-sm text-gray-500">Tappa 3</p>
+                                    </div>
+                                </div>
+                                <div class="bg-white p-6 rounded-lg shadow hover-shadow transition-shadow cursor-pointer" onclick="changePage('verbania')">
+                                    <div class="text-center">
+                                        <div class="w-16 h-16 mx-auto rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center mb-4">
+                                            <svg class="h-8 w-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </div>
+                                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Verbania Intra</h3>
+                                        <p class="text-2xl font-bold text-blue-600 mb-2">h. 15:00</p>
+                                        <p class="text-sm text-gray-500">Tappa 4</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Call to Action -->
+                    <section class="py-16 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+                        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                            <h2 class="text-3xl font-bold mb-4">
+                                Partecipa al Battello di Pace
+                            </h2>
+                            <p class="text-xl mb-8">
+                                Insieme possiamo fare la differenza.<br>Partecipa all'evento e contribuisci a costruire un mondo di pace.
+                            </p>
+                            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                                <button onclick="changePage('adesioni')" class="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3 text-lg bg-transparent rounded-md transition-colors">
+                                    Hanno aderito
+                                </button>
+                                <button onclick="window.open('https://instagram.com/artigianidipace', '_blank')" class="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 text-lg rounded-md transition-colors">
+                                    Resta in contatto
+                                </button>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <!-- ADESIONI PAGE -->
+            <div id="adesioni-page" class="page">
+                <div class="py-12 bg-gray-50 min-h-screen">
+                    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div class="text-center mb-12">
+                            <h1 class="text-4xl font-bold text-gray-900 mb-4">Adesioni</h1>
+                            <p class="text-xl text-gray-600">Le organizzazioni che hanno aderito al Battello di Pace 2025</p>
+                        </div>
+
+                        <div class="grid gap-6">
+                            <div class="bg-white p-6 rounded-lg shadow">
+                                <div class="flex items-start justify-between">
+                                    <div>
+                                        <h3 class="text-lg font-semibold text-gray-900">Associazione Artigiani di Pace</h3>
+                                        <p class="text-blue-600 text-sm font-medium">Associazione</p>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 mt-2">Organizzatori principali dell'evento</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow">
+                                <div class="flex items-start justify-between">
+                                    <div>
+                                        <h3 class="text-lg font-semibold text-gray-900">Centro Sociale Verbania</h3>
+                                        <p class="text-blue-600 text-sm font-medium">Centro Sociale</p>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 mt-2">Sostegno logistico e organizzativo</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow">
+                                <div class="flex items-start justify-between">
+                                    <div>
+                                        <h3 class="text-lg font-semibold text-gray-900">Comitato per la Pace del Lago Maggiore</h3>
+                                        <p class="text-blue-600 text-sm font-medium">Comitato</p>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 mt-2">Coordinamento territoriale</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow">
+                                <div class="flex items-start justify-between">
+                                    <div>
+                                        <h3 class="text-lg font-semibold text-gray-900">Emergency - Sezione Lago Maggiore</h3>
+                                        <p class="text-blue-600 text-sm font-medium">ONG</p>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 mt-2">Beneficiario della raccolta fondi</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow">
+                                <div class="flex items-start justify-between">
+                                    <div>
+                                        <h3 class="text-lg font-semibold text-gray-900">Gruppo Giovani per la Pace</h3>
+                                        <p class="text-blue-600 text-sm font-medium">Gruppo Giovanile</p>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 mt-2">Animazione e sensibilizzazione</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow">
+                                <div class="flex items-start justify-between">
+                                    <div>
+                                        <h3 class="text-lg font-semibold text-gray-900">Istituto Comprensivo di Arona</h3>
+                                        <p class="text-blue-600 text-sm font-medium">Scuola</p>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 mt-2">Partecipazione studenti</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow">
+                                <div class="flex items-start justify-between">
+                                    <div>
+                                        <h3 class="text-lg font-semibold text-gray-900">Movimento Nonviolento</h3>
+                                        <p class="text-blue-600 text-sm font-medium">Movimento</p>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 mt-2">Supporto ideologico e organizzativo</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow">
+                                <div class="flex items-start justify-between">
+                                    <div>
+                                        <h3 class="text-lg font-semibold text-gray-900">Parrocchia San Carlo Borromeo</h3>
+                                        <p class="text-blue-600 text-sm font-medium">Parrocchia</p>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 mt-2">Sostegno spirituale e comunitario</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NEWS PAGE -->
+            <div id="news-page" class="page">
+                <div class="py-12 bg-gray-50 min-h-screen">
+                    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div class="text-center mb-12">
+                            <h1 class="text-4xl font-bold text-gray-900 mb-4">News</h1>
+                            <p class="text-xl text-gray-600">Le ultime notizie sul Battello di Pace 2025</p>
+                        </div>
+
+                        <div class="space-y-8">
+                            <article class="bg-white p-6 rounded-lg shadow">
+                                <div class="flex items-start justify-between mb-4">
+                                    <div>
+                                        <h2 class="text-xl font-semibold text-gray-900 mb-2">Materiali informativi disponibili</h2>
+                                        <p class="text-sm text-gray-500">20 settembre 2025</p>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 mb-4">Sono ora disponibili locandine, volantini e materiali per la promozione dell'evento nei vostri territori.</p>
+                                <div class="space-y-2">
+                                    <a href="#" class="block text-blue-600 hover:text-blue-800 text-sm">📄 Locandina evento (PNG)</a>
+                                    <a href="#" class="block text-blue-600 hover:text-blue-800 text-sm">📄 Locandina vuota personalizzabile (PNG)</a>
+                                    <a href="#" class="block text-blue-600 hover:text-blue-800 text-sm">📄 Volantino informativo (PDF)</a>
+                                </div>
+                            </article>
+
+                            <article class="bg-white p-6 rounded-lg shadow">
+                                <div class="flex items-start justify-between mb-4">
+                                    <div>
+                                        <h2 class="text-xl font-semibold text-gray-900 mb-2">Definiti gli orari delle tappe</h2>
+                                        <p class="text-sm text-gray-500">15 settembre 2025</p>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600">Il Battello di Pace partirà da Angera alle 9:30, proseguirà per Arona (10:30), Baveno (12:00) e concluderà a Verbania Intra alle 15:00.</p>
+                            </article>
+
+                            <article class="bg-white p-6 rounded-lg shadow">
+                                <div class="flex items-start justify-between mb-4">
+                                    <div>
+                                        <h2 class="text-xl font-semibold text-gray-900 mb-2">Aperte le adesioni per l'evento</h2>
+                                        <p class="text-sm text-gray-500">10 settembre 2025</p>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 mb-4">Associazioni, gruppi e cittadini possono aderire all'iniziativa. Tutti i fondi raccolti saranno devoluti a Emergency per sostenere i loro progetti umanitari.</p>
+                                <div class="space-y-2">
+                                    <a href="#" class="block text-blue-600 hover:text-blue-800 text-sm">📄 Modulo adesione organizzazioni (PDF)</a>
+                                </div>
+                            </article>
+
+                            <article class="bg-white p-6 rounded-lg shadow">
+                                <div class="flex items-start justify-between mb-4">
+                                    <div>
+                                        <h2 class="text-xl font-semibold text-gray-900 mb-2">Annuncio ufficiale del Battello di Pace 2025</h2>
+                                        <p class="text-sm text-gray-500">1 settembre 2025</p>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600">È con grande gioia che annunciamo la nuova edizione del Battello di Pace per sabato 11 ottobre 2025. L'evento toccherà quattro porti del Lago Maggiore per unire territori e coscienze.</p>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CONTATTI PAGE -->
+            <div id="contatti-page" class="page">
+                <div class="py-12 bg-gray-50 min-h-screen">
+                    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div class="text-center mb-12">
+                            <h1 class="text-4xl font-bold text-gray-900 mb-4">Contatti</h1>
+                            <p class="text-xl text-gray-600">Come raggiungerci e seguire il Battello di Pace</p>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div class="bg-white p-6 rounded-lg shadow">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-4">Informazioni Generali</h3>
+                                <div class="space-y-3">
+                                    <div class="flex items-center space-x-3">
+                                        <svg class="h-5 w-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                        </svg>
+                                        <a href="mailto:info@battellodipace.it" class="text-blue-600 hover:text-blue-800">info@battellodipace.it</a>
+                                    </div>
+                                    <div class="flex items-center space-x-3">
+                                        <svg class="h-5 w-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                        </svg>
+                                        <span class="text-gray-700">Lago Maggiore - Piemonte e Lombardia</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-white p-6 rounded-lg shadow">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-4">Social Media</h3>
+                                <div class="space-y-3">
+                                    <a href="https://instagram.com/artigianidipace" target="_blank" class="flex items-center space-x-3 text-blue-600 hover:text-blue-800">
+                                        <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.62 5.367 11.987 11.988 11.987c6.62 0 11.987-5.367 11.987-11.987C24.014 5.367 18.637.001 12.017.001zM8.449 16.988c-1.297 0-2.448-.49-3.323-1.297L3.182 17.635l1.935-1.944c-.807-.875-1.297-2.026-1.297-3.323s.49-2.448 1.297-3.323L3.182 7.101l1.944 1.944c.875-.807 2.026-1.297 3.323-1.297s2.448.49 3.323 1.297l1.944-1.944-1.944 1.944c.807.875 1.297 2.026 1.297 3.323s-.49 2.448-1.297 3.323l1.944 1.944-1.944-1.944c-.875.807-2.026 1.297-3.323 1.297z"></path>
+                                        </svg>
+                                        <span>@artigianidipace</span>
+                                    </a>
+                                    <a href="https://facebook.com/reteartigianidipace" target="_blank" class="flex items-center space-x-3 text-blue-600 hover:text-blue-800">
+                                        <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path>
+                                        </svg>
+                                        <span>@reteartigianidipace</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Placeholder per le altre pagine (Battello, Presidi) -->
+            <div id="battello-page" class="page">
+                <div class="py-12 bg-gray-50 min-h-screen">
+                    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <h1 class="text-4xl font-bold text-gray-900 mb-4">Il Battello</h1>
+                        <p class="text-xl text-gray-600">Informazioni sul Battello di Pace (contenuto da implementare)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="angera-page" class="page">
+                <div class="py-12 bg-gray-50 min-h-screen">
+                    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <h1 class="text-4xl font-bold text-gray-900 mb-4">Presidio di Angera</h1>
+                        <p class="text-xl text-gray-600">Ore 9:30 - Prima tappa del Battello di Pace</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="arona-page" class="page">
+                <div class="py-12 bg-gray-50 min-h-screen">
+                    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <h1 class="text-4xl font-bold text-gray-900 mb-4">Presidio di Arona</h1>
+                        <p class="text-xl text-gray-600">Ore 10:30 - Seconda tappa del Battello di Pace</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="baveno-page" class="page">
+                <div class="py-12 bg-gray-50 min-h-screen">
+                    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <h1 class="text-4xl font-bold text-gray-900 mb-4">Presidio di Baveno</h1>
+                        <p class="text-xl text-gray-600">Ore 12:00 - Terza tappa del Battello di Pace</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="verbania-page" class="page">
+                <div class="py-12 bg-gray-50 min-h-screen">
+                    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <h1 class="text-4xl font-bold text-gray-900 mb-4">Presidio di Verbania Intra</h1>
+                        <p class="text-xl text-gray-600">Ore 15:00 - Quarta e ultima tappa del Battello di Pace</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-gradient-to-r from-blue-800 to-purple-800 text-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Battello di Pace -->
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Battello di Pace</h4>
+                        <div class="space-y-3">
+                            <div class="flex items-center space-x-3">
+                                <svg class="h-5 w-5 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
+                                <span class="text-blue-100">Lago Maggiore</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <svg class="h-5 w-5 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
+                                <span class="text-blue-100">11 ottobre 2025</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contatti -->
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Contatti</h4>
+                        <div class="space-y-3">
+                            <div class="flex items-center space-x-3">
+                                <svg class="h-5 w-5 text-blue-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                </svg>
+                                <a href="mailto:info@battellodipace.it" class="text-blue-100 hover:text-white transition-colors">
+                                    info@battellodipace.it
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Media -->
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Seguici</h4>
+                        <div class="space-y-3">
+                            <a href="https://instagram.com/artigianidipace" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-3 text-blue-100 hover:text-white transition-colors">
+                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.62 5.367 11.987 11.988 11.987c6.62 0 11.987-5.367 11.987-11.987C24.014 5.367 18.637.001 12.017.001zM8.449 16.988c-1.297 0-2.448-.49-3.323-1.297L3.182 17.635l1.935-1.944c-.807-.875-1.297-2.026-1.297-3.323s.49-2.448 1.297-3.323L3.182 7.101l1.944 1.944c.875-.807 2.026-1.297 3.323-1.297s2.448.49 3.323 1.297l1.944-1.944-1.944 1.944c.807.875 1.297 2.026 1.297 3.323s-.49 2.448-1.297 3.323l1.944 1.944-1.944-1.944c-.875.807-2.026 1.297-3.323 1.297z"></path>
+                                </svg>
+                                <span>@artigianidipace</span>
+                            </a>
+                            <a href="https://facebook.com/reteartigianidipace" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-3 text-blue-100 hover:text-white transition-colors">
+                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path>
+                                </svg>
+                                <span>@reteartigianidipace</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        let currentPage = 'home';
+
+        // Funzione per cambiare pagina
+        function changePage(page) {
+            // Nascondere tutte le pagine
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            
+            // Mostrare la pagina richiesta
+            const targetPage = document.getElementById(page + '-page');
+            if (targetPage) {
+                targetPage.classList.add('active');
+                currentPage = page;
+            }
+
+            // Aggiornare la navigazione
+            updateNavigation();
+        }
+
+        // Funzione per aggiornare lo stato della navigazione
+        function updateNavigation() {
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.classList.remove('bg-blue-100', 'text-blue-700');
+                item.classList.add('text-gray-700');
+                
+                const itemPage = item.getAttribute('data-page');
+                if (itemPage === currentPage || 
+                   (itemPage === 'presidi' && ['angera', 'arona', 'baveno', 'verbania'].includes(currentPage))) {
+                    item.classList.remove('text-gray-700');
+                    item.classList.add('bg-blue-100', 'text-blue-700');
+                }
+            });
+        }
+
+        // Funzione per toggle del menu mobile
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = document.getElementById('menu-icon');
+            const closeIcon = document.getElementById('close-icon');
+            
+            mobileMenu.classList.toggle('open');
+            menuIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        }
+
+        // Event listener per il bottone del menu mobile
+        document.getElementById('mobile-menu-button').addEventListener('click', toggleMobileMenu);
+
+        // Inizializzazione
+        document.addEventListener('DOMContentLoaded', function() {
+            updateNavigation();
+        });
+    </script>
+</body>
+</html>
