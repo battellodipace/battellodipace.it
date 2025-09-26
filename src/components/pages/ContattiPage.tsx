@@ -1,6 +1,8 @@
 import { Mail, MapPin, Instagram, Facebook, Phone, Clock, Users, Download } from 'lucide-react';
 import { Card } from '../ui/card';
 import { Button } from '../ui/button';
+import peaceBackground from 'figma:asset/contatti.jpeg';
+import colombaLogo from 'figma:asset/colomba.png';
 
 export function ContattiPage() {
   return (
@@ -8,8 +10,8 @@ export function ContattiPage() {
       {/* Hero Section */}
       <section 
         className="relative py-16 bg-cover bg-center bg-no-repeat"
-        style={{ 
-          backgroundImage: `url(https://images.unsplash.com/photo-1642591427307-471115da7dc2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsYWtlJTIwbWFnZ2lvcmUlMjBwZWFjZWZ1bCUyMHdhdGVyJTIwbW91bnRhaW5zfGVufDF8fHx8MTc1ODg5MDgxMnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral)` 
+        style={{
+          backgroundImage: `url(${peaceBackground})`
         }}
       >
         {/* Overlay per migliorare la leggibilità */}
@@ -24,7 +26,7 @@ export function ContattiPage() {
             Contatti
           </h1>
           <p className="text-lg text-white max-w-2xl mx-auto drop-shadow-lg">
-            Mettiti in contatto con noi per informazioni, adesioni e collaborazioni
+            Seguici o contattaci per informazioni e adesioni
           </p>
         </div>
       </section>
@@ -143,25 +145,27 @@ export function ContattiPage() {
                 </h2>
                 
                 <div className="space-y-4">
-                  {/* Locandina dell'evento */}
+                  {/* Volantino ufficiale */}
                   <a
-                    href="https://images.unsplash.com/photo-1646222586308-a32025584473?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwZWFjZSUyMGJvYXQlMjBldmVudCUyMHBvc3RlciUyMHJhaW5ib3clMjBjb2xvcnN8ZW58MXx8fHwxNzU4ODkwNzU0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                    download="locandina-battello-di-pace.jpg"
+                    href="/assets/materials/volantino.pdf"
+                    download="volantino-battello-di-pace.pdf"
                     className="flex items-center justify-between p-4 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors group"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                        <img 
-                          src="https://images.unsplash.com/photo-1646222586308-a32025584473?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwZWFjZSUyMGJvYXQlMjBldmVudCUyMHBvc3RlciUyMHJhaW5ib3clMjBjb2xvcnN8ZW58MXx8fHwxNzU4ODkwNzU0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                          alt="Anteprima locandina"
-                          className="w-10 h-10 object-cover rounded"
+                      <div className="w-12 h-12 flex items-center justify-center p-1">
+                        <img
+                          src={colombaLogo}
+                          alt="Logo Battello di Pace"
+                          className="w-full h-full object-contain"
                         />
                       </div>
                       <div>
                         <h3 className="font-semibold text-gray-900 group-hover:text-blue-700">
-                          Locandina dell'evento
+                          Volantino ufficiale
                         </h3>
-                        <p className="text-sm text-gray-500">JPG - Alta risoluzione</p>
+                        <p className="text-sm text-gray-500">PDF - Stampa e condivisione</p>
                       </div>
                     </div>
                     <Download className="h-5 w-5 text-gray-400 group-hover:text-blue-500" />
@@ -169,16 +173,18 @@ export function ContattiPage() {
 
                   {/* Logo dell'evento */}
                   <a
-                    href="https://images.unsplash.com/photo-1601264082107-98d88fab0c63?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwZWFjZSUyMGxvZ28lMjByYWluYm93JTIwZG92ZXxlbnwxfHx8fDE3NTg4OTA3NTd8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                    href={colombaLogo}
                     download="logo-battello-di-pace.png"
                     className="flex items-center justify-between p-4 bg-purple-50 rounded-lg hover:bg-purple-100 transition-colors group"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
-                        <img 
-                          src="https://images.unsplash.com/photo-1601264082107-98d88fab0c63?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwZWFjZSUyMGxvZ28lMjByYWluYm93JTIwZG92ZXxlbnwxfHx8fDE3NTg4OTA3NTd8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                          alt="Anteprima logo"
-                          className="w-10 h-10 object-cover rounded"
+                      <div className="w-12 h-12 flex items-center justify-center p-1">
+                        <img
+                          src={colombaLogo}
+                          alt="Logo Battello di Pace"
+                          className="w-full h-full object-contain"
                         />
                       </div>
                       <div>

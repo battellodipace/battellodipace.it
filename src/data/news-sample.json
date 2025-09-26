@@ -1,0 +1,58 @@
+{
+  "_comment": "Questo è un file di esempio per la struttura di una news. NON viene utilizzato dall'applicazione.",
+  "_instructions": "Per aggiungere una nuova news, copia questa struttura nel file news.json",
+
+  "esempio_news_completa": {
+    "id": 999,
+    "data": "2025-10-01",
+    "titolo": "Titolo della news",
+    "contenuto": "Contenuto dettagliato della news. Può essere lungo quanto necessario e contenere informazioni complete sull'evento o l'annuncio.",
+    "categoria": "Press",
+    "link": "https://esempio.com/articolo",
+    "materiali": [
+      {
+        "nome": "Nome del documento allegato",
+        "url": "/assets/path/to/file.pdf",
+        "tipo": "PDF"
+      },
+      {
+        "nome": "Immagine correlata",
+        "url": "/assets/image.png",
+        "tipo": "PNG"
+      }
+    ]
+  },
+
+  "esempio_news_minima": {
+    "id": 998,
+    "data": "2025-10-02",
+    "titolo": "News semplice senza allegati",
+    "contenuto": "Una news può anche essere molto semplice, senza link esterni o materiali allegati.",
+    "categoria": "Organizzazione",
+    "materiali": []
+  },
+
+  "categorie_disponibili": [
+    "Press - Comunicati stampa e notizie per i media",
+    "Adesioni - Nuove adesioni di associazioni, gruppi e persone",
+    "Organizzazione - Dettagli organizzativi, orari, programma, partecipazioni",
+    "Materiali - Materiali informativi disponibili (locandine, volantini, etc.)",
+    "Raccolta Fondi - Aggiornamenti sulla raccolta fondi per Emergency e MSF"
+  ],
+
+  "tipi_materiali": [
+    "PDF - Documenti PDF",
+    "PNG - Immagini PNG",
+    "JPG - Immagini JPG",
+    "Documento - File di testo generico",
+    "Multimedia - Video o audio"
+  ],
+
+  "note_importanti": [
+    "L'ID deve essere univoco e progressivo",
+    "La data deve essere nel formato YYYY-MM-DD",
+    "Il campo 'link' è opzionale - usalo solo per link esterni",
+    "Il campo 'materiali' è un array, può essere vuoto [] se non ci sono allegati",
+    "Le news vengono automaticamente ordinate per data (più recenti prima)"
+  ]
+}

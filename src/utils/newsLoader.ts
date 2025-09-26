@@ -1,26 +1,26 @@
 import { News } from '../types/news';
-import { inlineNewsData } from './newsDataInline';
+import newsJson from '../data/news.json';
 
 /**
- * Funzione helper per caricare le news in modo sicuro
- * Usa i dati inline come fonte affidabile
+ * Funzione helper per caricare le news dal file JSON
+ * Importa i dati dal file news.json nella cartella data
  */
 export const loadNewsData = (): News[] => {
   try {
-    // Usa direttamente i dati inline che sono sicuri e tipizzati
-    const newsData = inlineNewsData;
-    
+    // Importa i dati dal JSON
+    const newsData = newsJson as News[];
+
     // Valida la struttura dei dati
     if (!Array.isArray(newsData) || newsData.length === 0) {
       throw new Error('I dati delle news non sono validi');
     }
-    
+
     // Ordina per data decrescente (più recenti prima)
-    return newsData.sort((a, b) => 
+    return newsData.sort((a, b) =>
       new Date(b.data).getTime() - new Date(a.data).getTime()
     );
   } catch (error) {
-    console.error('Errore nel caricamento delle news:', error);
+    // Errore silenzioso in produzione
     // Fallback di emergenza con dati minimi
     return [{
       id: 1,

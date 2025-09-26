@@ -1,9 +1,0 @@
-# File di esempio per la cartella organizzazione
-
-Questa è la cartella per documenti organizzativi come:
-- Programma dettagliato
-- Orari di partenza e arrivo
-- Mappe dei punti di ritrovo
-- Istruzioni logistiche
-
-Sostituire questo file con i documenti reali dell'evento.

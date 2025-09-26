@@ -1,9 +1,0 @@
-# File di esempio per la cartella multimedia
-
-Questa è la cartella per contenuti multimediali come:
-- Video promozionali
-- Foto degli eventi precedenti
-- Audio e podcast
-- Gallerie fotografiche
-
-Sostituire questo file con i contenuti multimediali reali dell'evento.

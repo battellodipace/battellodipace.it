@@ -80,11 +80,6 @@
     "presidio": "Arona"
   },
   {
-    "id": "9d18c",
-    "nome": "Associazione Culturale abbracciArti",
-    "presidio": "Arona"
-  },
-  {
     "id": "01533",
     "nome": "Azione Cattolica di Arona",
     "presidio": "Arona"
@@ -127,7 +122,7 @@
   {
     "id": "f0140",
     "nome": "Emergency - Gruppo di Verbania",
-    "presidio": "Arona"
+    "presidio": "Verbania - Intra"
   },
   {
     "id": "f2002",
@@ -247,6 +242,11 @@
   {
     "id": "13445",
     "nome": "Genitori Upside Down",
+    "presidio": "Verbania - Intra"
+  },
+  {
+    "id": "d35df",
+    "nome": "Gruppo Abele di Verbania Onlus",
     "presidio": "Verbania - Intra"
   },
   {

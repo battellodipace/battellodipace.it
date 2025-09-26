@@ -3,14 +3,13 @@ import { Ship, Heart, Users, Clock, BookOpen, MessageCircle, Calendar, ChevronLe
 import { Card } from '../ui/card';
 import { Button } from '../ui/button';
 import { Badge } from '../ui/badge';
-import { PeaceIcon } from '../BattelloPaceIcon';
 import { News } from '../../types/news';
 import { getLatestNews } from '../../utils/newsLoader';
-import logoImage from 'figma:asset/17fcf9be705bfd07663370a0e2fff3976a7c4a64.png';
-import heroBackground from 'figma:asset/6dba92ea0509bb549fadc5b84d8668a85f998afd.png';
-import doveImage from 'figma:asset/908fe75b68915f55e22cc73c1d1eb986e9b22f2b.png';
-import emergencyLogo from 'figma:asset/ed5a4cadadd1d2f73cb4fc6ab9e4c7b65e9c8e40.png';
-import msfLogo from 'figma:asset/741e87f62ee4feee3811765f8c0e2cafd0373894.png';
+import logoImage from 'figma:asset/battellodipace.png';
+import heroBackground from 'figma:asset/barchette.jpeg';
+import doveImage from 'figma:asset/colomba.png';
+import emergencyLogo from 'figma:asset/emergency.png';
+import msfLogo from 'figma:asset/msf.png';
 
 interface HomePageProps {
   onPageChange: (page: string) => void;
@@ -34,7 +33,7 @@ export function HomePage({ onPageChange }: HomePageProps) {
       setLatestNews(latestNewsData);
       setCurrentSlide(0); // Reset slide position
     } catch (error) {
-      console.error('Errore caricamento news:', error);
+      // Errore silenzioso in produzione
       setLatestNews([]);
     }
   }, []);
@@ -98,9 +97,8 @@ export function HomePage({ onPageChange }: HomePageProps) {
                   className="w-32 h-32 mx-auto object-contain drop-shadow-lg"
                 />
               </div>
-              <h1 className="text-5xl md:text-7xl font-bold mb-4">
-                <span className="battello-gradient">BATTELLO</span>{' '}
-                <span className="di-pace-gradient">DI PACE</span>
+              <h1 className="text-5xl md:text-7xl font-bold mb-4 animated-rainbow">
+                BATTELLO DI PACE
               </h1>
               <p className="text-2xl md:text-3xl text-white font-semibold mb-2 drop-shadow-lg">
                 sabato 11 ottobre 2025
@@ -194,7 +192,10 @@ export function HomePage({ onPageChange }: HomePageProps) {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {tappe.map((tappa, index) => (
-              <Card key={tappa.nome} className="p-6 hover:shadow-lg transition-shadow cursor-pointer" onClick={() => onPageChange(tappa.nome.toLowerCase().replace(' ', ''))}>
+              <Card key={tappa.nome} className="p-6 hover:shadow-lg transition-shadow cursor-pointer" onClick={() => {
+                const pageName = tappa.nome === 'Verbania Intra' ? 'verbania-intra' : tappa.nome.toLowerCase().replace(' ', '');
+                onPageChange(pageName);
+              }}>
                 <div className="text-center">
                   <div className={`w-16 h-16 mx-auto rounded-full bg-gradient-to-r ${tappa.colore} flex items-center justify-center mb-4`}>
                     <Users className="h-8 w-8 text-white" />
@@ -241,7 +242,21 @@ export function HomePage({ onPageChange }: HomePageProps) {
                             </div>
                           </div>
                         </div>
-                        <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                        <h3
+                          className="text-2xl font-bold text-gray-900 mb-2 cursor-pointer hover:text-blue-600 transition-colors"
+                          onClick={() => {
+                            onPageChange('news');
+                            // Aspetta che la pagina sia cambiata, poi scrolla alla news specifica
+                            setTimeout(() => {
+                              const element = document.getElementById(`news-${news.id}`);
+                              if (element) {
+                                const headerHeight = 80; // Altezza approssimativa dell'header
+                                const elementTop = element.offsetTop - headerHeight;
+                                window.scrollTo({ top: elementTop, behavior: 'smooth' });
+                              }
+                            }, 300); // Aumentato il timeout per aspettare lo scroll al top
+                          }}
+                        >
                           {news.titolo}
                         </h3>
                         <p className="text-gray-600 leading-relaxed">

@@ -1,9 +1,0 @@
-# File di esempio per la cartella press
-
-Questa è la cartella per comunicati stampa come:
-- Comunicati ufficiali
-- Note per giornalisti
-- Foto in alta risoluzione
-- Dichiarazioni organizzatori
-
-Sostituire questo file con i comunicati reali dell'evento.

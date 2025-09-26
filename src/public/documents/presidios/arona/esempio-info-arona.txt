@@ -1,9 +1,0 @@
-# File di esempio per il presidio di Arona
-
-Inserire qui:
-- Mappa del punto di ritrovo
-- Contatti organizzatori locali  
-- Informazioni logistiche specifiche
-- Programma locale
-
-Sostituire questo file con le informazioni reali del presidio di Arona.

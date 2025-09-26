@@ -3,6 +3,7 @@ import { Users, MapPin } from 'lucide-react';
 import { Card } from '../ui/card';
 import { Badge } from '../ui/badge';
 import { getAdesioni, getPresidi, getPresidioName, type Adesione } from '../../utils/adesioniDataInline';
+import peaceBackground from 'figma:asset/adesioni.jpeg';
 
 export function AdesioniPage() {
   const [adesioni, setAdesioni] = useState<Adesione[]>([]);
@@ -42,8 +43,8 @@ export function AdesioniPage() {
       {/* Hero Section */}
       <section 
         className="relative py-16 bg-cover bg-center bg-no-repeat"
-        style={{ 
-          backgroundImage: `url(https://images.unsplash.com/photo-1642591427307-471115da7dc2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsYWtlJTIwbWFnZ2lvcmUlMjBwZWFjZWZ1bCUyMHdhdGVyJTIwbW91bnRhaW5zfGVufDF8fHx8MTc1ODg5MDgxMnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral)` 
+        style={{
+          backgroundImage: `url(${peaceBackground})`
         }}
       >
         {/* Overlay per migliorare la leggibilità */}

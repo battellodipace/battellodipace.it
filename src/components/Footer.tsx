@@ -1,5 +1,5 @@
 import { Instagram, Facebook, Mail, MapPin, Calendar } from 'lucide-react';
-import logoImage from 'figma:asset/17fcf9be705bfd07663370a0e2fff3976a7c4a64.png';
+import logoImage from 'figma:asset/battellodipace.png';
 
 export function Footer() {
   return (

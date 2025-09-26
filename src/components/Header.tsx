@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from './ui/button';
-import logoImage from 'figma:asset/17fcf9be705bfd07663370a0e2fff3976a7c4a64.png';
+import logoImage from 'figma:asset/battellodipace.png';
 
 interface HeaderProps {
   currentPage: string;
@@ -18,7 +18,7 @@ export function Header({ currentPage, onPageChange }: HeaderProps) {
       { id: 'angera', label: 'Angera' },
       { id: 'arona', label: 'Arona' },
       { id: 'baveno', label: 'Baveno' },
-      { id: 'verbania', label: 'Verbania Intra' }
+      { id: 'verbania-intra', label: 'Verbania Intra' }
     ]},
     { id: 'adesioni', label: 'Adesioni' },
     { id: 'news', label: 'News' },

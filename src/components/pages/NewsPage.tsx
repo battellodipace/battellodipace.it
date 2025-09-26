@@ -1,14 +1,22 @@
 import { useState, useEffect } from 'react';
-import { Calendar, Download, FileText, Image as ImageIcon, ChevronRight, ExternalLink } from 'lucide-react';
+import { Calendar, Download, FileText, Image as ImageIcon, ChevronRight, ExternalLink, Newspaper } from 'lucide-react';
 import { Card } from '../ui/card';
 import { Badge } from '../ui/badge';
 import { Button } from '../ui/button';
 import { News, Materiale } from '../../types/news';
 import { loadNewsData } from '../../utils/newsLoader';
+import pressDataRaw from '../../data/press.json';
+
+// Ordina i dati della stampa dal più recente al più vecchio
+const pressData = [...pressDataRaw].sort((a, b) => {
+  return new Date(b.data).getTime() - new Date(a.data).getTime();
+});
+import peaceBackground from 'figma:asset/news.jpeg';
 
 export function NewsPage() {
   const [news, setNews] = useState<News[]>([]);
   const [expandedNews, setExpandedNews] = useState<number | null>(null);
+  const [currentPressIndex, setCurrentPressIndex] = useState(0);
 
   useEffect(() => {
     // Carica le news utilizzando il newsLoader
@@ -16,7 +24,7 @@ export function NewsPage() {
       const newsData = loadNewsData();
       setNews(newsData);
     } catch (error) {
-      console.error('Errore nel caricamento delle news:', error);
+      // Errore silenzioso in produzione
       setNews([]);
     }
   }, []);
@@ -28,6 +36,23 @@ export function NewsPage() {
       month: 'long',
       year: 'numeric'
     });
+  };
+
+  const formatPressDate = (dateString: string) => {
+    const date = new Date(dateString);
+    return date.toLocaleDateString('it-IT', {
+      day: 'numeric',
+      month: 'short',
+      year: 'numeric'
+    });
+  };
+
+  const nextPress = () => {
+    setCurrentPressIndex((prev) => (prev + 1) % pressData.length);
+  };
+
+  const prevPress = () => {
+    setCurrentPressIndex((prev) => (prev - 1 + pressData.length) % pressData.length);
   };
 
   const getIconForTipo = (tipo: string) => {
@@ -57,8 +82,8 @@ export function NewsPage() {
       {/* Hero Section */}
       <section 
         className="relative py-16 bg-cover bg-center bg-no-repeat"
-        style={{ 
-          backgroundImage: `url(https://images.unsplash.com/photo-1642591427307-471115da7dc2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsYWtlJTIwbWFnZ2lvcmUlMjBwZWFjZWZ1bCUyMHdhdGVyJTIwbW91bnRhaW5zfGVufDF8fHx8MTc1ODg5MDgxMnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral)` 
+        style={{
+          backgroundImage: `url(${peaceBackground})`
         }}
       >
         {/* Overlay per migliorare la leggibilità */}
@@ -73,7 +98,7 @@ export function NewsPage() {
             News
           </h1>
           <p className="text-lg text-white max-w-2xl mx-auto drop-shadow-lg">
-            Tutte le novità sull'evento e i materiali da scaricare per la promozione
+            Tutte le novità sull'evento e i materiali da scaricare
           </p>
         </div>
       </section>
@@ -94,7 +119,7 @@ export function NewsPage() {
           ) : (
             <div className="space-y-8">
               {news.map((item, index) => (
-                <Card key={item.id} className="p-6 hover:shadow-lg transition-shadow">
+                <Card key={item.id} id={`news-${item.id}`} className="p-6 hover:shadow-lg transition-shadow">
                   <div>
                     {/* Titolo e badges */}
                     <div className="flex items-start justify-between mb-2">
@@ -105,11 +130,6 @@ export function NewsPage() {
                         <Badge className="bg-blue-100 text-blue-700">
                           {item.categoria}
                         </Badge>
-                        {item.materiali.length > 0 && (
-                          <Badge className="bg-green-100 text-green-700">
-                            {item.materiali.length} materiali
-                          </Badge>
-                        )}
                       </div>
                     </div>
 
@@ -199,6 +219,88 @@ export function NewsPage() {
           )}
         </div>
       </section>
+
+      {/* Parlano di noi */}
+      {pressData.length > 0 && (
+        <section className="py-12 bg-gray-50 border-t">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">
+                Parlano di noi
+              </h2>
+              <p className="text-gray-600">
+                Gli articoli sulla stampa che hanno parlato del Battello di Pace
+              </p>
+            </div>
+
+            <div className="relative">
+              <Card className="p-6">
+                <div className="flex items-center justify-between">
+                  <button
+                    onClick={prevPress}
+                    className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors disabled:opacity-50"
+                    disabled={pressData.length <= 1}
+                  >
+                    <ChevronRight className="h-5 w-5 rotate-180" />
+                  </button>
+
+                  <div className="flex-1 mx-6 text-center">
+                    <div className="flex items-center justify-center gap-3 mb-2">
+                      <Newspaper className="h-5 w-5 text-blue-600" />
+                      <h3 className="text-lg font-semibold text-gray-900">
+                        {pressData[currentPressIndex].testata}
+                      </h3>
+                    </div>
+                    <p className="text-sm text-gray-500 mb-4">
+                      {formatPressDate(pressData[currentPressIndex].data)}
+                    </p>
+                    <a
+                      href={pressData[currentPressIndex].link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                    >
+                      {pressData[currentPressIndex].link.startsWith('http') ? (
+                        <>
+                          <ExternalLink className="h-4 w-4" />
+                          Leggi l'articolo
+                        </>
+                      ) : (
+                        <>
+                          <Download className="h-4 w-4" />
+                          Scarica PDF
+                        </>
+                      )}
+                    </a>
+                  </div>
+
+                  <button
+                    onClick={nextPress}
+                    className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors disabled:opacity-50"
+                    disabled={pressData.length <= 1}
+                  >
+                    <ChevronRight className="h-5 w-5" />
+                  </button>
+                </div>
+
+                {pressData.length > 1 && (
+                  <div className="flex justify-center mt-4 gap-2">
+                    {pressData.map((_, index) => (
+                      <button
+                        key={index}
+                        onClick={() => setCurrentPressIndex(index)}
+                        className={`w-2 h-2 rounded-full transition-colors ${
+                          index === currentPressIndex ? 'bg-blue-600' : 'bg-gray-300'
+                        }`}
+                      />
+                    ))}
+                  </div>
+                )}
+              </Card>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Call to Action */}
       <section className="py-12 bg-white border-t">

@@ -1,9 +1,0 @@
-# File di esempio per la cartella materiali
-
-Questa è la cartella per materiali promozionali come:
-- Locandine
-- Volantini  
-- Banner web
-- Logo dell'evento
-
-Sostituire questo file con i materiali reali dell'evento.

@@ -2389,6 +2389,37 @@ html {
   font-size: var(--font-size);
 }
 
+.animated-rainbow {
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: linear-gradient(90deg,
+    #ff6b35,
+    #ffa500,
+    #ffd700,
+    #90ee90,
+    #00bfff,
+    #4169e1,
+    #9370db,
+    #ff69b4,
+    #ff6b35
+  );
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbow-slide 8s linear infinite;
+}
+
+@keyframes rainbow-slide {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
 .battello-gradient {
   background: linear-gradient(90deg, #ff6b35 0%, #f7931e 30%, #ffd60a 60%, #32cd32 100%);
   -webkit-text-fill-color: transparent;

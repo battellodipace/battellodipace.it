@@ -1,11 +1,11 @@
 import { Anchor, Users, Heart, Calendar, MapPin, Clock, Ship, Target, HelpCircle, ExternalLink } from 'lucide-react';
 import { Card } from '../ui/card';
 import { Button } from '../ui/button';
-import logoImage from 'figma:asset/17fcf9be705bfd07663370a0e2fff3976a7c4a64.png';
-import doveImage from 'figma:asset/908fe75b68915f55e22cc73c1d1eb986e9b22f2b.png';
-import emergencyLogo from 'figma:asset/ed5a4cadadd1d2f73cb4fc6ab9e4c7b65e9c8e40.png';
-import msfLogo from 'figma:asset/741e87f62ee4feee3811765f8c0e2cafd0373894.png';
-import peaceSymbolBackground from 'figma:asset/c3e00d4f032bddb223413a028600ee514d432074.png';
+import logoImage from 'figma:asset/battellodipace.png';
+import doveImage from 'figma:asset/colomba.png';
+import emergencyLogo from 'figma:asset/emergency.png';
+import msfLogo from 'figma:asset/msf.png';
+import battelloBackground from 'figma:asset/battello.jpeg';
 
 interface BattelloPageProps {
   onPageChange: (page: string) => void;
@@ -17,7 +17,7 @@ export function BattelloPage({ onPageChange }: BattelloPageProps) {
       {/* Hero Section */}
       <section 
         className="relative py-16 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${peaceSymbolBackground})` }}
+        style={{ backgroundImage: `url(${battelloBackground})` }}
       >
         {/* Overlay scuro per migliorare la leggibilità */}
         <div className="absolute inset-0 bg-black/60"></div>
@@ -25,7 +25,7 @@ export function BattelloPage({ onPageChange }: BattelloPageProps) {
         {/* Contenuto */}
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <div className="w-20 h-20 mx-auto mb-6">
+            <div className="w-24 h-24 mx-auto mb-6">
               <img 
                 src={logoImage} 
                 alt="Battello di Pace 2025" 
@@ -113,7 +113,7 @@ export function BattelloPage({ onPageChange }: BattelloPageProps) {
                   </h3>
                   <div className="space-y-3 text-gray-600">
                     <p>
-                      Per candidarsi all'imbarco è possibile scrivere a <strong className="text-blue-600">battello@battellodipace.it</strong>.
+                      Le modalità per l'accesso alla navigazione sul battello sono in via di definizione e saranno comunicate a breve.
                     </p>
                     <p>
                       I posti sono limitati: chiediamo comprensione a chi non riuscirà a imbarcarsi. In ogni caso, i presidi lungo le tappe resteranno aperti a tutti per la partecipazione.

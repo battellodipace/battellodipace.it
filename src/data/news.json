@@ -1,3 +1,30 @@
-// FILE NON PIÙ UTILIZZATO
-// Le news sono ora gestite tramite /utils/newsDataInline.ts
-// Questo file può essere eliminato in sicurezza
+[
+  {
+    "id": 1,
+    "data": "2025-09-25",
+    "titolo": "Invito alla Conferenza Stampa - 29 settembre 2025",
+    "contenuto": "Lunedì 29 settembre alle ore 11:30, presso l'oratorio San Carlo di Arona (Via don Minzoni 17), si terrà la presentazione ufficiale del Battello di Pace, l'iniziativa che sabato 11 ottobre solcherà simbolicamente le acque del Lago Maggiore toccando quattro tappe di presidio. Un'occasione per conoscere finalità, programma e associazioni coinvolte. In allegato il comunicato con tutti i dettagli.",
+    "categoria": "Press",
+    "materiali": [
+      {
+        "nome": "Invito conferenza stampa",
+        "url": "/assets/materials/20250929-ConferenzaStampa.pdf",
+        "tipo": "PDF"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "data": "2025-09-12",
+    "titolo": "Presentato ad Arona il Battello di Pace 2025",
+    "contenuto": "Oggi ad Arona è stato presentato il Battello di Pace, un viaggio simbolico e partecipato che sabato 11 ottobre solcherà le acque del Lago Maggiore per promuovere pace, solidarietà e cooperazione. Il battello partirà da Angera e farà tappa ad Arona, Baveno e Intra, con presìdi pubblici di musica, letture, testimonianze e momenti di riflessione. Numerose associazioni, enti e amministrazioni hanno già aderito con entusiasmo all'iniziativa. In allegato il comunicato stampa ufficiale con tutti i dettagli.",
+    "categoria": "Press",
+    "materiali": [
+      {
+        "nome": "Comunicato stampa ufficiale",
+        "url": "/assets/materials/20250912-Comunicato-stampa.pdf",
+        "tipo": "PDF"
+      }
+    ]
+  }
+]
