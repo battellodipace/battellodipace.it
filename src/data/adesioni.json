@@ -1,42 +1,277 @@
 [
   {
-    "nome": "Associazione Artigiani di Pace",
-    "tipo": "Associazione",
-    "descrizione": "Organizzatori principali dell'evento"
+    "id": "1d4fd",
+    "nome": "ACG Giovani Azione Cattolica Valtravaglia",
+    "presidio": "Angera"
   },
   {
-    "nome": "Centro Sociale Verbania",
-    "tipo": "Centro Sociale",
-    "descrizione": "Sostegno logistico e organizzativo"
+    "id": "34c10",
+    "nome": "ANPI Sezione di Ispra",
+    "presidio": "Angera"
   },
   {
-    "nome": "Comitato per la Pace del Lago Maggiore",
-    "tipo": "Comitato",
-    "descrizione": "Coordinamento territoriale"
+    "id": "f48d5",
+    "nome": "ANPI Sezione di Sesto Calende",
+    "presidio": "Angera"
   },
   {
-    "nome": "Emergency - Sezione Lago Maggiore",
-    "tipo": "ONG",
-    "descrizione": "Beneficiario della raccolta fondi"
+    "id": "1e5f8",
+    "nome": "ANPI Sezione di Taino",
+    "presidio": "Angera"
   },
   {
-    "nome": "Gruppo Giovani per la Pace",
-    "tipo": "Gruppo Giovanile",
-    "descrizione": "Animazione e sensibilizzazione"
+    "id": "11b98",
+    "nome": "Associazione Cittadini del Mondo di Sesto Calende",
+    "presidio": "Angera"
   },
   {
-    "nome": "Istituto Comprensivo di Arona",
-    "tipo": "Scuola",
-    "descrizione": "Partecipazione studenti"
+    "id": "16e7f",
+    "nome": "Associazione Pace e Convivenza di Sesto Calende",
+    "presidio": "Angera"
   },
   {
-    "nome": "Movimento Nonviolento",
-    "tipo": "Movimento",
-    "descrizione": "Supporto ideologico e organizzativo"
+    "id": "71255",
+    "nome": "Caritas di Angera, Ranco, Taino",
+    "presidio": "Angera"
   },
   {
-    "nome": "Parrocchia San Carlo Borromeo",
-    "tipo": "Parrocchia",
-    "descrizione": "Sostegno spirituale e comunitario"
+    "id": "11761",
+    "nome": "Circolo Legambiente di Sesto Calende",
+    "presidio": "Angera"
+  },
+  {
+    "id": "fd518",
+    "nome": "Comitato Spontaneo per la Pace di Castelletto Ticino",
+    "presidio": "Angera"
+  },
+  {
+    "id": "ee044",
+    "nome": "Emergency - Gruppo di Varese",
+    "presidio": "Angera"
+  },
+  {
+    "id": "44944",
+    "nome": "Tavolo per la Pace dell'Alto Verbano",
+    "presidio": "Angera"
+  },
+  {
+    "id": "df324",
+    "nome": "ANPI Sezione di Arona",
+    "presidio": "Arona"
+  },
+  {
+    "id": "f8e56",
+    "nome": "Art&Job Academy di Verbania",
+    "presidio": "Arona"
+  },
+  {
+    "id": "95186",
+    "nome": "Associazione Casa dei Popoli",
+    "presidio": "Arona"
+  },
+  {
+    "id": "acf0e",
+    "nome": "Associazione Città di Dio",
+    "presidio": "Arona"
+  },
+  {
+    "id": "9c6be",
+    "nome": "Associazione Culturale Abbracciarti",
+    "presidio": "Arona"
+  },
+  {
+    "id": "9d18c",
+    "nome": "Associazione Culturale abbracciArti",
+    "presidio": "Arona"
+  },
+  {
+    "id": "01533",
+    "nome": "Azione Cattolica di Arona",
+    "presidio": "Arona"
+  },
+  {
+    "id": "a8b86",
+    "nome": "Caritas di Arona",
+    "presidio": "Arona"
+  },
+  {
+    "id": "46bb0",
+    "nome": "Circolo Legambiente di Arona",
+    "presidio": "Arona"
+  },
+  {
+    "id": "8968c",
+    "nome": "Comitato Pace e Convivenza",
+    "presidio": "Arona"
+  },
+  {
+    "id": "525ea",
+    "nome": "Compagni di Volo",
+    "presidio": "Arona"
+  },
+  {
+    "id": "72a1a",
+    "nome": "Comune Oleggio Castello",
+    "presidio": "Arona"
+  },
+  {
+    "id": "9b5c8",
+    "nome": "Consulta Femminile di Arona",
+    "presidio": "Arona"
+  },
+  {
+    "id": "f4d59",
+    "nome": "Emergency - Gruppo di Novara",
+    "presidio": "Arona"
+  },
+  {
+    "id": "f0140",
+    "nome": "Emergency - Gruppo di Verbania",
+    "presidio": "Arona"
+  },
+  {
+    "id": "f2002",
+    "nome": "Insieme si può...",
+    "presidio": "Arona"
+  },
+  {
+    "id": "27c54",
+    "nome": "Movimento Federalista Europeo",
+    "presidio": "Arona"
+  },
+  {
+    "id": "cbc60",
+    "nome": "Oratorio San Carlo di Arona",
+    "presidio": "Arona"
+  },
+  {
+    "id": "c304b",
+    "nome": "Pax Christi",
+    "presidio": "Arona"
+  },
+  {
+    "id": "036da",
+    "nome": "Rete Nondisolopane",
+    "presidio": "Arona"
+  },
+  {
+    "id": "c09ae",
+    "nome": "Scout di Arona",
+    "presidio": "Arona"
+  },
+  {
+    "id": "88a73",
+    "nome": "Scuola Popolare di Italiano della Ca' de Pop di Arona",
+    "presidio": "Arona"
+  },
+  {
+    "id": "ca95e",
+    "nome": "Terra di confine",
+    "presidio": "Arona"
+  },
+  {
+    "id": "8440f",
+    "nome": "VCO in movimento",
+    "presidio": "Arona"
+  },
+  {
+    "id": "9ace5",
+    "nome": "Voci per la pace",
+    "presidio": "Arona"
+  },
+  {
+    "id": "e6f1f",
+    "nome": "Comune di Baveno",
+    "presidio": "Baveno"
+  },
+  {
+    "id": "c72d5",
+    "nome": "Parrocchia Gervaso e Protaso di Baveno",
+    "presidio": "Baveno"
+  },
+  {
+    "id": "38e6b",
+    "nome": "21 marzo di Libera",
+    "presidio": "Verbania - Intra"
+  },
+  {
+    "id": "73270",
+    "nome": "ANPI Sezione di Laveno Mombello",
+    "presidio": "Verbania - Intra"
+  },
+  {
+    "id": "76424",
+    "nome": "ANPI Sezione di Verbania",
+    "presidio": "Verbania - Intra"
+  },
+  {
+    "id": "10c07",
+    "nome": "ARCI di Verbania",
+    "presidio": "Verbania - Intra"
+  },
+  {
+    "id": "fff92",
+    "nome": "Arcigay di Verbania",
+    "presidio": "Verbania - Intra"
+  },
+  {
+    "id": "46f6d",
+    "nome": "Auser di Verbania",
+    "presidio": "Verbania - Intra"
+  },
+  {
+    "id": "5dca7",
+    "nome": "AVAP - Associazione Volontari per Ammalati Psichici",
+    "presidio": "Verbania - Intra"
+  },
+  {
+    "id": "cc282",
+    "nome": "Comitato \"Ferma il riarmo\" Ossola",
+    "presidio": "Verbania - Intra"
+  },
+  {
+    "id": "f2d38",
+    "nome": "Comitato per la Pace di Verbania ",
+    "presidio": "Verbania - Intra"
+  },
+  {
+    "id": "0e431",
+    "nome": "Comune di Ghiffa",
+    "presidio": "Verbania - Intra"
+  },
+  {
+    "id": "0b1ef",
+    "nome": "Comune di Vignone",
+    "presidio": "Verbania - Intra"
+  },
+  {
+    "id": "13445",
+    "nome": "Genitori Upside Down",
+    "presidio": "Verbania - Intra"
+  },
+  {
+    "id": "584f9",
+    "nome": "LetterAltura",
+    "presidio": "Verbania - Intra"
+  },
+  {
+    "id": "0ffb2",
+    "nome": "Mani Tese di Verbania",
+    "presidio": "Verbania - Intra"
+  },
+  {
+    "id": "7485b",
+    "nome": "Medici Senza Frontiere - Gruppo Novarese Piemontese",
+    "presidio": "Verbania - Intra"
+  },
+  {
+    "id": "0fb83",
+    "nome": "Non solo aiuto OdV di Verbania",
+    "presidio": "Verbania - Intra"
+  },
+  {
+    "id": "77dbf",
+    "nome": "Oratorio Nuova Realtà e Parrocchia di Ghiffa",
+    "presidio": "Verbania - Intra"
   }
 ]

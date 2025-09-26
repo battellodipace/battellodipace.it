@@ -193,3 +193,9 @@ Temporary Items
 .ionide
 
 # End of https://www.toptal.com/developers/gitignore/api/osx,visualstudiocode,node,vercel
+
+# Vite build output
+build/
+mise.toml
+.claude/
+CLAUDE.md

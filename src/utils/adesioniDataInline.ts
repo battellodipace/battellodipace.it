@@ -1,99 +1,30 @@
-// Dati delle adesioni inline
-// Questo sistema sostituisce il caricamento JSON per evitare errori di import
-import emergencyLogo from 'figma:asset/6c4beb50e973516e801931f3b482621abe9b89e6.png';
+// Import dei dati delle adesioni dal file JSON
+import adesioniJson from '../data/adesioni.json';
 
 export interface Adesione {
+  id?: string;
   nome: string;
-  presidio: 'angera' | 'arona' | 'baveno' | 'verbania';
+  presidio: string;
   logo?: string; // URL opzionale del logo
 }
 
-export const adesioniData: Adesione[] = [
-  {
-    nome: "ANPI Sezione Arona",
-    presidio: "arona"
-  },
-  {
-    nome: "ANPI Sezione Verbano",
-    presidio: "verbania"
-  },
-  {
-    nome: "Associazione Culturale Rocca di Angera",
-    presidio: "angera"
-  },
-  {
-    nome: "Banda Musicale Città di Verbania",
-    presidio: "verbania"
-  },
-  {
-    nome: "Centro Sociale Anziani Baveno",
-    presidio: "baveno"
-  },
-  {
-    nome: "CGIL Camera del Lavoro Verbania",
-    presidio: "verbania"
-  },
-  {
-    nome: "Circolo ARCI Lago Maggiore",
-    presidio: "arona"
-  },
-  {
-    nome: "Città di Verbania",
-    presidio: "verbania"
-  },
-  {
-    nome: "Comitato Pace e Solidarietà Arona",
-    presidio: "arona"
-  },
-  {
-    nome: "Comune di Angera",
-    presidio: "angera"
-  },
-  {
-    nome: "Comune di Arona",
-    presidio: "arona"
-  },
-  {
-    nome: "Comune di Baveno",
-    presidio: "baveno"
-  },
-  {
-    nome: "Emergency Gruppo Arona",
-    presidio: "arona",
-    logo: emergencyLogo
-  },
-  {
-    nome: "Emergency Verbano Cusio Ossola",
-    presidio: "verbania",
-    logo: emergencyLogo
-  },
-  {
-    nome: "Gruppo Scout Baveno",
-    presidio: "baveno",
-    logo: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=100&h=100&fit=crop"
-  },
-  {
-    nome: "Medici Senza Frontiere Verbano",
-    presidio: "baveno",
-    logo: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=100&h=100&fit=crop"
-  },
-  {
-    nome: "Movimento per la Pace Verbania",
-    presidio: "verbania"
-  },
-  {
-    nome: "Parrocchia San Gervasio e Protasio",
-    presidio: "baveno"
-  },
-  {
-    nome: "Pro Loco Angera",
-    presidio: "angera"
-  },
-  {
-    nome: "Rete delle Associazioni del VCO",
-    presidio: "verbania"
+// Normalizza i nomi dei presidi per compatibilità
+const normalizePresidio = (presidio: string): string => {
+  // Converti "Verbania - Intra" in "verbania"
+  if (presidio.toLowerCase().includes('verbania')) {
+    return 'verbania';
   }
-];
+  // Converti "Angera", "Arona", "Baveno" in lowercase
+  return presidio.toLowerCase();
+};
+
+// Importa i dati dal JSON e normalizza i presidi
+export const adesioniData: Adesione[] = adesioniJson.map((item: any) => ({
+  id: item.id,
+  nome: item.nome,
+  presidio: normalizePresidio(item.presidio),
+  logo: item.logo
+}));
 
 // Funzioni helper per le adesioni
 export const getAdesioni = (): Adesione[] => {
