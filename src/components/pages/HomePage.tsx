@@ -109,14 +109,25 @@ export function HomePage({ onPageChange }: HomePageProps) {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                onClick={() => document.getElementById('tappe-section')?.scrollIntoView({ behavior: 'smooth' })} 
+              <Button
+                onClick={() => {
+                  const element = document.getElementById('tappe-section');
+                  if (element) {
+                    const elementTop = element.offsetTop - 80;
+                    window.scrollTo({ top: elementTop, behavior: 'smooth' });
+                  }
+                }}
                 className="bg-gradient-to-r from-blue-600 to-purple-600 hover:opacity-90 text-white px-8 py-3 text-lg shadow-lg transition-all duration-300 ease-in-out hover:scale-105"
               >
                 Scopri le Tappe
               </Button>
-              <Button 
-                onClick={() => onPageChange('contatti')} 
+              <Button
+                onClick={() => {
+                  onPageChange('contatti');
+                  setTimeout(() => {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }, 100);
+                }}
                 className="bg-white/90 text-blue-600 hover:bg-white border-2 border-white px-8 py-3 text-lg shadow-lg font-semibold transition-all duration-300 ease-in-out hover:scale-105"
               >
                 Segui l'evento
@@ -195,6 +206,9 @@ export function HomePage({ onPageChange }: HomePageProps) {
               <Card key={tappa.nome} className="p-6 hover:shadow-lg transition-shadow cursor-pointer" onClick={() => {
                 const pageName = tappa.nome === 'Verbania Intra' ? 'verbania-intra' : tappa.nome.toLowerCase().replace(' ', '');
                 onPageChange(pageName);
+                setTimeout(() => {
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }, 100);
               }}>
                 <div className="text-center">
                   <div className={`w-16 h-16 mx-auto rounded-full bg-gradient-to-r ${tappa.colore} flex items-center justify-center mb-4`}>
@@ -311,7 +325,12 @@ export function HomePage({ onPageChange }: HomePageProps) {
           {/* CTA per vedere tutte le news */}
           <div className="text-center mt-6">
             <Button
-              onClick={() => onPageChange('news')}
+              onClick={() => {
+                onPageChange('news');
+                setTimeout(() => {
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }, 100);
+              }}
               variant="outline"
               className="border-blue-500 text-blue-600 hover:bg-blue-50 px-8 py-3 text-lg"
             >
@@ -332,15 +351,25 @@ export function HomePage({ onPageChange }: HomePageProps) {
             Insieme possiamo fare la differenza.<br />Partecipa all'evento e contribuisci a costruire un mondo di pace.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              onClick={() => onPageChange('adesioni')} 
+            <Button
+              onClick={() => {
+                onPageChange('adesioni');
+                setTimeout(() => {
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }, 100);
+              }}
               variant="outline"
               className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3 text-lg bg-transparent"
             >
               Hanno aderito
             </Button>
-            <Button 
-              onClick={() => window.open('https://instagram.com/artigianidipace', '_blank')} 
+            <Button
+              onClick={() => {
+                onPageChange('contatti');
+                setTimeout(() => {
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }, 100);
+              }}
               variant="secondary"
               className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 text-lg"
             >
