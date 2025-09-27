@@ -55,6 +55,11 @@
     "presidio": "Angera"
   },
   {
+    "id": "b7a82",
+    "nome": "Telep Africa di Arona",
+    "presidio": "Arona"
+  },
+  {
     "id": "df324",
     "nome": "ANPI Sezione di Arona",
     "presidio": "Arona"
@@ -120,11 +125,6 @@
     "presidio": "Arona"
   },
   {
-    "id": "f0140",
-    "nome": "Emergency - Gruppo di Verbania",
-    "presidio": "Verbania - Intra"
-  },
-  {
     "id": "f2002",
     "nome": "Insieme si può...",
     "presidio": "Arona"
@@ -183,6 +183,16 @@
     "id": "c72d5",
     "nome": "Parrocchia Gervaso e Protaso di Baveno",
     "presidio": "Baveno"
+  },
+  {
+    "id": "a066b",
+    "nome": "Boy Scout Omegna",
+    "presidio": "Intra"
+  },
+  {
+    "id": "f0140",
+    "nome": "Emergency - Gruppo di Verbania",
+    "presidio": "Verbania - Intra"
   },
   {
     "id": "38e6b",
