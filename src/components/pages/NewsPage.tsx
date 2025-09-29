@@ -77,6 +77,12 @@ export function NewsPage() {
     return colors[tipo as keyof typeof colors] || 'bg-gray-100 text-gray-700';
   };
 
+  const renderContent = (content: string) => {
+    // Sostituisce **testo** con <strong>testo</strong>
+    const htmlContent = content.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+    return <span dangerouslySetInnerHTML={{ __html: htmlContent }} />;
+  };
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
@@ -141,11 +147,11 @@ export function NewsPage() {
                     </div>
 
                     <p className="text-gray-600 mb-4 leading-relaxed">
-                      {expandedNews === item.id 
-                        ? item.contenuto 
-                        : item.contenuto.length > 150 
-                          ? `${item.contenuto.substring(0, 150)}...`
-                          : item.contenuto
+                      {expandedNews === item.id
+                        ? renderContent(item.contenuto)
+                        : item.contenuto.length > 150
+                          ? renderContent(`${item.contenuto.substring(0, 150)}...`)
+                          : renderContent(item.contenuto)
                       }
                     </p>
 
@@ -175,13 +181,13 @@ export function NewsPage() {
                           className="inline-flex items-center space-x-2 text-blue-600 hover:text-blue-700 transition-colors"
                         >
                           <ExternalLink className="h-4 w-4" />
-                          <span>Leggi di più</span>
+                          <span>{item.linkText || 'Leggi di più'}</span>
                         </a>
                       </div>
                     )}
 
                     {/* Materiali */}
-                    {item.materiali.length > 0 && (
+                    {item.materiali && item.materiali.length > 0 && (
                       <div>
                         <h4 className="font-semibold text-gray-900 mb-3">
                           Materiali da scaricare:

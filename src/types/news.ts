@@ -11,5 +11,6 @@ export interface News {
   contenuto: string;
   categoria: string;
   link?: string;
-  materiali: Materiale[];
+  linkText?: string;
+  materiali?: Materiale[];
 }
