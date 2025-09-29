@@ -55,6 +55,11 @@
     "presidio": "Angera"
   },
   {
+    "id": "b8df5",
+    "nome": "Comune di Castelleto Ticino",
+    "presidio": "Angera"
+  },
+  {
     "id": "b7a82",
     "nome": "Telep Africa di Arona",
     "presidio": "Arona"
@@ -242,6 +247,11 @@
   {
     "id": "0e431",
     "nome": "Comune di Ghiffa",
+    "presidio": "Verbania - Intra"
+  },
+  {
+    "id": "8ed25",
+    "nome": "Comune di Verbania",
     "presidio": "Verbania - Intra"
   },
   {
