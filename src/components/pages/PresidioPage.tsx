@@ -54,10 +54,17 @@ export function PresidioPage({ presidio, onPageChange }: PresidioPageProps) {
       orario: '15:00',
       colore: 'from-blue-500 to-purple-500',
       backgroundImage: verbaniaBackground,
-      luogo: 'Palazzo Flaim',
+      luogo: 'Porto di Intra<br/>Palazzo Flaim',
       durata: '2 ore',
-      note: 'Partenza corteo verso villa Maioni (Biblioteca). Intervento di Raffaele Crocco (Direttore dell\'Atlante delle guerre e dei conflitti nel mondo), testimonianza Giuseppe Medici Senza Frontiere, testimonianza di Don Angelo Nigro, "Canti di pace" Coro San Martino di Vignone.',
-      documento: null
+      accoglienza: 'Accoglienza battello e raduno al Palazzo Flaim',
+      corteo: 'Partenza corteo verso Villa Maioni (Biblioteca)',
+      interventi: [
+        { nome: 'Raffaele Crocco', ruolo: 'Direttore dell\'Atlante delle guerre e dei conflitti nel mondo' },
+        { nome: 'Giuseppe Caravella', ruolo: 'Medici Senza Frontiere' },
+        { nome: 'Don Angelo Nigro', ruolo: 'Testimonianza' },
+        { nome: 'Coro San Martino di Vignone', ruolo: 'Canti di pace' }
+      ],
+      documento: '/assets/presidi/verbania-intra.pdf'
     }
   };
 
@@ -128,6 +135,30 @@ export function PresidioPage({ presidio, onPageChange }: PresidioPageProps) {
                     <div className="bg-gray-50 border-l-4 border-gray-400 p-4 rounded-r-lg">
                       <h3 className="font-semibold text-gray-800 mb-2">Collaborazioni</h3>
                       <p className="text-gray-700">{data.collaborazioni}</p>
+                    </div>
+                  </div>
+                ) : presidio === 'verbania' ? (
+                  <div className="space-y-4">
+                    <div className="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-r-lg">
+                      <h3 className="font-semibold text-blue-800 mb-2">Accoglienza</h3>
+                      <p className="text-blue-700">{data.accoglienza}</p>
+                    </div>
+
+                    <div className="bg-purple-50 border-l-4 border-purple-400 p-4 rounded-r-lg">
+                      <h3 className="font-semibold text-purple-800 mb-2">Corteo</h3>
+                      <p className="text-purple-700">{data.corteo}</p>
+                    </div>
+
+                    <div className="bg-indigo-50 border-l-4 border-indigo-400 p-4 rounded-r-lg">
+                      <h3 className="font-semibold text-indigo-800 mb-2">Interventi e Testimonianze</h3>
+                      <div className="space-y-3">
+                        {data.interventi?.map((intervento, index) => (
+                          <div key={index} className="text-indigo-700">
+                            <p className="font-semibold">{intervento.nome}</p>
+                            <p className="text-sm">{intervento.ruolo}</p>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 ) : (

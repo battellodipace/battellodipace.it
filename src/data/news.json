@@ -1,5 +1,21 @@
 [
   {
+    "id": 4,
+    "data": "2025-09-30",
+    "titolo": "Disponibile il programma del Presidio di Verbania Intra",
+    "contenuto": "È online il programma completo del Presidio di Verbania Intra, quarta e ultima tappa del Battello di Pace in programma sabato 11 ottobre alle ore 15:00. Il presidio partirà dal Porto di Intra con accoglienza al Palazzo Flaim, per poi proseguire in corteo verso Villa Maioni (Biblioteca). Interverranno Raffaele Crocco (Direttore dell'Atlante delle guerre e dei conflitti nel mondo), Giuseppe Caravella (Medici Senza Frontiere) e Don Angelo Nigro, con i 'Canti di pace' del Coro San Martino di Vignone.",
+    "categoria": "Presìdi",
+    "link": "/verbania-intra",
+    "linkText": "Scopri il programma completo",
+    "materiali": [
+      {
+        "nome": "Locandina Verbania Intra",
+        "url": "/assets/presidi/verbania-intra.pdf",
+        "tipo": "PDF"
+      }
+    ]
+  },
+  {
     "id": 1,
     "data": "2025-09-25",
     "titolo": "Invito alla Conferenza Stampa - 29 settembre 2025",
