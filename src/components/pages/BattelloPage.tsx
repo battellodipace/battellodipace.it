@@ -113,7 +113,7 @@ export function BattelloPage({ onPageChange }: BattelloPageProps) {
                   </h3>
                   <div className="space-y-3 text-gray-600">
                     <p>
-                      Le modalità per l'accesso alla navigazione sul battello sono in via di definizione e saranno comunicate a breve.
+                      Per candidarsi all'imbarco è possibile scrivere a <strong className="text-blue-600">battello@battellodipace.it</strong>.
                     </p>
                     <p>
                       I posti sono limitati: chiediamo comprensione a chi non riuscirà a imbarcarsi. In ogni caso, i presidi lungo le tappe resteranno aperti a tutti per la partecipazione.

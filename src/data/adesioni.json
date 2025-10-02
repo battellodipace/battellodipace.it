@@ -55,8 +55,23 @@
     "presidio": "Angera"
   },
   {
+    "id": "2b9c1",
+    "nome": "Comune di Angera",
+    "presidio": "Angera"
+  },
+  {
     "id": "b8df5",
     "nome": "Comune di Castelleto Ticino",
+    "presidio": "Angera"
+  },
+  {
+    "id": "46db6",
+    "nome": "Comune di Sesto Calende",
+    "presidio": "Angera"
+  },
+  {
+    "id": "40bae",
+    "nome": "Vento di Terra onlus",
     "presidio": "Angera"
   },
   {
@@ -97,6 +112,11 @@
   {
     "id": "a8b86",
     "nome": "Caritas di Arona",
+    "presidio": "Arona"
+  },
+  {
+    "id": "f5c01",
+    "nome": "CGIL Provinciale di Novara",
     "presidio": "Arona"
   },
   {
@@ -150,6 +170,11 @@
     "presidio": "Arona"
   },
   {
+    "id": "d04cc",
+    "nome": "Associazione Culturale PedagogicaMente Insieme",
+    "presidio": "Arona"
+  },
+  {
     "id": "036da",
     "nome": "Rete Nondisolopane",
     "presidio": "Arona"
@@ -167,11 +192,6 @@
   {
     "id": "ca95e",
     "nome": "Terra di confine",
-    "presidio": "Arona"
-  },
-  {
-    "id": "8440f",
-    "nome": "VCO in movimento",
     "presidio": "Arona"
   },
   {
@@ -235,6 +255,11 @@
     "presidio": "Verbania - Intra"
   },
   {
+    "id": "73d8c",
+    "nome": "CGIL Provinciale di Verbania",
+    "presidio": "Verbania - Intra"
+  },
+  {
     "id": "cc282",
     "nome": "Comitato \"Ferma il riarmo\" Ossola",
     "presidio": "Verbania - Intra"
@@ -245,8 +270,18 @@
     "presidio": "Verbania - Intra"
   },
   {
+    "id": "1d107",
+    "nome": "Comune di Cambiasca",
+    "presidio": "Verbania - Intra"
+  },
+  {
     "id": "0e431",
     "nome": "Comune di Ghiffa",
+    "presidio": "Verbania - Intra"
+  },
+  {
+    "id": "5ad34",
+    "nome": "Comune di San Bernardino Verbano",
     "presidio": "Verbania - Intra"
   },
   {
