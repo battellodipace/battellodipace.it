@@ -1,5 +1,21 @@
 [
   {
+    "id": 6,
+    "data": "2025-10-03",
+    "titolo": "Disponibile il programma del Presidio di Arona",
+    "contenuto": "È online il programma completo del Presidio di Arona, seconda tappa del Battello di Pace in programma sabato 11 ottobre alle ore 10:45 in Piazza del Popolo. Ritrovo previsto per le ore 10:15. Viviamo in un mondo pieno di contraddizioni e ingiustizie. Le vittime delle guerre ci chiamano ad agire. Da soli non cambiamo il mondo, ma possiamo farlo insieme, cambiando noi stessi e le nostre scelte. Ne parliamo con Silvia Zani (Emergency), Sergio Cavallaro (Auser ambulatorio Borgomanero) e Fabio Pisoni (Banca Etica), con contributi e interventi di Francesca Amat e Manuel Consigli (Abbracciarti), Coro scuola secondaria 1° grado Giovanni XXIII, Filarmonica Aronese, ANPI, Città di Dio, Movimento Federalista Europeo, Insieme si Può, Oratorio San Carlo e Medici Senza Frontiere.",
+    "categoria": "Presìdi",
+    "link": "/arona",
+    "linkText": "Scopri il programma completo",
+    "materiali": [
+      {
+        "nome": "Locandina Arona",
+        "url": "/assets/presidi/arona.pdf",
+        "tipo": "PDF"
+      }
+    ]
+  },
+  {
     "id": 5,
     "data": "2025-10-03",
     "titolo": "Disponibile il programma del Presidio di Angera",

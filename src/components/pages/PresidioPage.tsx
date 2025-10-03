@@ -46,13 +46,30 @@ export function PresidioPage({ presidio, onPageChange }: PresidioPageProps) {
     },
     arona: {
       nome: 'Arona',
-      orario: '10:30',
+      orario: '10:45',
       colore: 'from-orange-500 to-yellow-500',
       backgroundImage: aronaBackground,
-      luogo: 'Zona Parlamentino<br/>Lungolago Via Marconi',
-      durata: '1 ora',
-      note: 'Possibile partecipazione anche per chi non prosegue il viaggio in battello.',
-      documento: null
+      luogo: 'Piazza del Popolo',
+      durata: '2 ore',
+      ritrovo: 'Ritrovo ore 10:15 Piazza del Popolo<br/>Arrivo del battello ore 10:45',
+      riflessione: 'Viviamo in un mondo pieno di contraddizioni e ingiustizie. Le vittime delle guerre ci chiamano ad agire. Da soli non cambiamo il mondo, ma possiamo farlo insieme, cambiando noi stessi e le nostre scelte. Come?',
+      relatori: [
+        { nome: 'SILVIA ZANI', organizzazione: 'EMERGENCY' },
+        { nome: 'SERGIO CAVALLARO', organizzazione: 'AUSER (ambulatorio Borgomanero)' },
+        { nome: 'FABIO PISONI', organizzazione: 'BANCA ETICA' }
+      ],
+      contributi: [
+        'Francesca Amat e Manuel Consigli di ABBRACCIARTI',
+        'Coro scuola secondaria 1° grado Giovanni XXIII',
+        'Filarmonica Aronese',
+        'ANPI',
+        'Città di Dio',
+        'Movimento Federalista Europeo',
+        'Insieme si Può',
+        'Oratorio San Carlo',
+        'Medici Senza Frontiere'
+      ],
+      documento: '/assets/presidi/arona.pdf'
     },
     baveno: {
       nome: 'Baveno',
@@ -202,6 +219,42 @@ export function PresidioPage({ presidio, onPageChange }: PresidioPageProps) {
                           <div key={index} className="text-indigo-700">
                             <p className="font-semibold">{intervento.nome}</p>
                             <p className="text-sm">{intervento.ruolo}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ) : presidio === 'arona' ? (
+                  <div className="space-y-4">
+                    <div className="bg-orange-50 border-l-4 border-orange-400 p-4 rounded-r-lg">
+                      <h3 className="font-semibold text-orange-800 mb-2">Ritrovo</h3>
+                      <p className="text-orange-700" dangerouslySetInnerHTML={{ __html: data.ritrovo }}></p>
+                    </div>
+
+                    <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-r-lg">
+                      <h3 className="font-semibold text-yellow-800 mb-2">Riflessione</h3>
+                      <p className="text-yellow-700">{data.riflessione}</p>
+                    </div>
+
+                    <div className="bg-orange-50 border-l-4 border-orange-400 p-4 rounded-r-lg">
+                      <h3 className="font-semibold text-orange-800 mb-2">Ne parliamo con</h3>
+                      <div className="space-y-3">
+                        {data.relatori?.map((relatore, index) => (
+                          <div key={index} className="text-orange-700">
+                            <p className="font-semibold">{relatore.nome}</p>
+                            <p className="text-sm">{relatore.organizzazione}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-r-lg">
+                      <h3 className="font-semibold text-yellow-800 mb-2">Contributi e interventi di</h3>
+                      <div className="space-y-2 text-yellow-700">
+                        {data.contributi?.map((contributo, index) => (
+                          <div key={index} className="flex">
+                            <span className="mr-2 flex-shrink-0">•</span>
+                            <span>{contributo}</span>
                           </div>
                         ))}
                       </div>
