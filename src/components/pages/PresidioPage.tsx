@@ -20,10 +20,29 @@ export function PresidioPage({ presidio, onPageChange }: PresidioPageProps) {
       orario: '9:30',
       colore: 'from-red-500 to-orange-500',
       backgroundImage: angeraBackground,
-      luogo: 'Prato<br/>Zona Imbarcadero',
+      luogo: 'Imbarcadero di Angera<br/>Fine Viale della Repubblica verso Piazza della Vittoria',
       durata: '90 minuti',
-      note: 'Punto di partenza del viaggio. Si consiglia di arrivare 15 minuti prima dell\'orario di partenza.',
-      documento: null // Disponibile a breve
+      attivo: 'Il presidio sarà attivo dalle ore 9:30 alle 11:00 nei pressi dell\'imbarcadero di Angera, fine viale della Repubblica verso piazza della Vittoria.',
+      territorio: 'Nel presidio di Angera sarà coinvolto il territorio intorno Lago Maggiore da Castelletto Ticino fino a Luino.',
+      attivita: 'Interventi, testimonianze, letture, musica dal vivo con Canto per la Palestina, danze popolari, raccolta firme petizioni, raccolta fondi di solidarietà.',
+      obiettivi: 'Insieme per denunciare la guerra, il riarmo, l\'economia armata, per chiedere Pace e Giustizia per Gaza e in ogni luogo di conflitto. Insieme per imparare a costruire Pace nelle scelte di ogni giorno.',
+      programma: {
+        musica: 'Musica dal vivo con Gruppo Farfalhiña "Canto per la Palestina"',
+        animazione: 'Animazione di danze dal mondo "Danzare la Pace" con Arcadinoe Teatro/ Sorrisi senza Confini',
+        testimonianze: [
+          'Don Renato Sacco Pax Christi, riarmo e disarmo',
+          'Emergency a Gaza e nel Mondo',
+          'Scuole di Angera: il Kaki di Nagasaki',
+          'Letture: Poesie, dichiarazioni di obiettori refusnik'
+        ],
+        azioni: [
+          'Legge 185 raccolta firme',
+          'Campagna BDS, boicottaggi',
+          'Local March for Gaza, raccolta firme',
+          'Appello Marcia Perugia Assisi 2025'
+        ]
+      },
+      documento: '/assets/presidi/angera.pdf'
     },
     arona: {
       nome: 'Arona',
@@ -42,12 +61,13 @@ export function PresidioPage({ presidio, onPageChange }: PresidioPageProps) {
       backgroundImage: bavenoBackground,
       luogo: 'Piazza Marinai d\'Italia',
       durata: '3 ore',
-      note: 'Presidio di sensibilizzazione con pranzo, musica dal vivo, reading, testimonianze dirette, interventi istituzionali. In caso di brutto tempo presso il tendone del chiosco di Villa Fedora.',
-      pranzo: 'Polenta con Tapelucco o Gorgonzola, acqua e bicchiere di vino, dolce, 15 euro (incasso devoluto in beneficenza).',
+      note: 'Presidio di sensibilizzazione con pranzo, musica dal vivo, reading, testimonianze dirette, interventi istituzionali.',
+      maltempo: 'In caso di brutto tempo presso il tendone del chiosco di Villa Fedora.',
+      pranzo: 'Polenta con tapelucco o gorgonzola, acqua e bicchiere di vino, dolce, 15 euro (incasso devoluto in beneficenza).',
       prenotazioni: 'Prenotazioni con messaggio whatsapp al numero 345 793 6361 o all\'ufficio Turismo 0323/924632.',
       collaborazioni: 'Con la collaborazione delle Associazioni, Comitati di Baveno, della Parrocchia Gervaso e Protaso e con il patrocinio del Comune di Baveno.',
       intrattenimento: 'Ad intrattenere il Corpo Musicale di Baveno e Baveno Web radio.',
-      documento: null
+      documento: '/assets/presidi/baveno.pdf'
     },
     verbania: {
       nome: 'Verbania Intra',
@@ -110,7 +130,29 @@ export function PresidioPage({ presidio, onPageChange }: PresidioPageProps) {
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">
                   Programma del Presidio
                 </h2>
-                {presidio === 'baveno' ? (
+                {presidio === 'angera' ? (
+                  <div className="space-y-4">
+                    <div className="bg-red-50 border-l-4 border-red-400 p-4 rounded-r-lg">
+                      <h3 className="font-semibold text-red-800 mb-2">Orari e Luogo</h3>
+                      <p className="text-red-700">{data.attivo}</p>
+                    </div>
+
+                    <div className="bg-orange-50 border-l-4 border-orange-400 p-4 rounded-r-lg">
+                      <h3 className="font-semibold text-orange-800 mb-2">Territorio Coinvolto</h3>
+                      <p className="text-orange-700">{data.territorio}</p>
+                    </div>
+
+                    <div className="bg-red-50 border-l-4 border-red-400 p-4 rounded-r-lg">
+                      <h3 className="font-semibold text-gray-900 mb-2">Attività</h3>
+                      <p className="text-gray-900">{data.attivita}</p>
+                    </div>
+
+                    <div className="bg-red-50 border-l-4 border-red-400 p-4 rounded-r-lg">
+                      <h3 className="font-semibold text-gray-900 mb-2">Obiettivi</h3>
+                      <p className="text-gray-900">{data.obiettivi}</p>
+                    </div>
+                  </div>
+                ) : presidio === 'baveno' ? (
                   <div className="space-y-4">
                     <div className="bg-green-50 border-l-4 border-green-400 p-4 rounded-r-lg">
                       <h3 className="font-semibold text-green-800 mb-2">Attività</h3>
@@ -135,6 +177,10 @@ export function PresidioPage({ presidio, onPageChange }: PresidioPageProps) {
                     <div className="bg-gray-50 border-l-4 border-gray-400 p-4 rounded-r-lg">
                       <h3 className="font-semibold text-gray-800 mb-2">Collaborazioni</h3>
                       <p className="text-gray-700">{data.collaborazioni}</p>
+                    </div>
+
+                    <div className="bg-gray-100 border-l-4 border-gray-400 p-4 rounded-r-lg">
+                      <p className="text-gray-700 text-sm italic">{data.maltempo}</p>
                     </div>
                   </div>
                 ) : presidio === 'verbania' ? (
@@ -169,6 +215,66 @@ export function PresidioPage({ presidio, onPageChange }: PresidioPageProps) {
                   </div>
                 )}
               </Card>
+
+              {presidio === 'angera' && data.programma && (
+                <Card className="p-6">
+                  <h2 className="text-2xl font-bold text-gray-900 mb-6">Scaletta</h2>
+                  <div className="space-y-4">
+                    {/* Musica e Animazione */}
+                    <div className="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-r-lg">
+                      <h3 className="font-semibold text-blue-800 mb-2">Intrattenimento</h3>
+                      <div className="space-y-2 text-blue-700">
+                        <div className="flex">
+                          <span className="mr-2 flex-shrink-0">•</span>
+                          <span>{data.programma.musica}</span>
+                        </div>
+                        <div className="flex">
+                          <span className="mr-2 flex-shrink-0">•</span>
+                          <span>{data.programma.animazione}</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Saluti */}
+                    <div className="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-r-lg">
+                      <h3 className="font-semibold text-blue-800">Saluti Istituzionali</h3>
+                    </div>
+
+                    {/* Testimonianze */}
+                    <div className="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-r-lg">
+                      <h3 className="font-semibold text-blue-800 mb-2">Testimonianze</h3>
+                      <div className="space-y-2 text-blue-700">
+                        {data.programma.testimonianze.map((testimonianza, index) => (
+                          <div key={index} className="flex">
+                            <span className="mr-2 flex-shrink-0">•</span>
+                            <span>{testimonianza}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Azioni per la Pace */}
+                    <div className="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-r-lg">
+                      <h3 className="font-semibold text-blue-800 mb-2">Che fare per scegliere la Pace</h3>
+                      <div className="space-y-2 text-blue-700">
+                        {data.programma.azioni.map((azione, index) => (
+                          <div key={index} className="flex">
+                            <span className="mr-2 flex-shrink-0">•</span>
+                            <span>{azione}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Nota maltempo */}
+                    <div className="bg-gray-100 border-l-4 border-gray-400 p-4 rounded-r-lg">
+                      <p className="text-gray-700 text-sm italic">
+                        In caso di forte pioggia la manifestazione sarà in sala consiliare piazza Repubblica, 14 angolo via Cavour dietro il comune.
+                      </p>
+                    </div>
+                  </div>
+                </Card>
+              )}
 
               <Card className="p-6">
                 <div className="flex items-center space-x-2 mb-4">

@@ -5,6 +5,11 @@
     "presidio": "Angera"
   },
   {
+    "id": "e4bee",
+    "nome": "ANPI Sezione di Daverio",
+    "presidio": "Angera"
+  },
+  {
     "id": "34c10",
     "nome": "ANPI Sezione di Ispra",
     "presidio": "Angera"
@@ -17,6 +22,11 @@
   {
     "id": "1e5f8",
     "nome": "ANPI Sezione di Taino",
+    "presidio": "Angera"
+  },
+  {
+    "id": "1e766",
+    "nome": "Arcadinoe Teatro",
     "presidio": "Angera"
   },
   {
@@ -35,6 +45,11 @@
     "presidio": "Angera"
   },
   {
+    "id": "c40f2",
+    "nome": "Casa delle Donne \"Anna Andriulo\" di Gallarate",
+    "presidio": "Angera"
+  },
+  {
     "id": "11761",
     "nome": "Circolo Legambiente di Sesto Calende",
     "presidio": "Angera"
@@ -42,16 +57,6 @@
   {
     "id": "fd518",
     "nome": "Comitato Spontaneo per la Pace di Castelletto Ticino",
-    "presidio": "Angera"
-  },
-  {
-    "id": "ee044",
-    "nome": "Emergency - Gruppo di Varese",
-    "presidio": "Angera"
-  },
-  {
-    "id": "44944",
-    "nome": "Tavolo per la Pace dell'Alto Verbano",
     "presidio": "Angera"
   },
   {
@@ -70,14 +75,24 @@
     "presidio": "Angera"
   },
   {
-    "id": "40bae",
-    "nome": "Vento di Terra onlus",
+    "id": "ee044",
+    "nome": "Emergency - Gruppo di Varese",
     "presidio": "Angera"
   },
   {
-    "id": "b7a82",
-    "nome": "Telep Africa di Arona",
-    "presidio": "Arona"
+    "id": "bb8f1",
+    "nome": "Sorrisi Senza Confini",
+    "presidio": "Angera"
+  },
+  {
+    "id": "44944",
+    "nome": "Tavolo per la Pace dell'Alto Verbano",
+    "presidio": "Angera"
+  },
+  {
+    "id": "40bae",
+    "nome": "Vento di Terra onlus",
+    "presidio": "Angera"
   },
   {
     "id": "df324",
@@ -102,6 +117,11 @@
   {
     "id": "9c6be",
     "nome": "Associazione Culturale Abbracciarti",
+    "presidio": "Arona"
+  },
+  {
+    "id": "d04cc",
+    "nome": "Associazione Culturale PedagogicaMente Insieme",
     "presidio": "Arona"
   },
   {
@@ -170,11 +190,6 @@
     "presidio": "Arona"
   },
   {
-    "id": "d04cc",
-    "nome": "Associazione Culturale PedagogicaMente Insieme",
-    "presidio": "Arona"
-  },
-  {
     "id": "036da",
     "nome": "Rete Nondisolopane",
     "presidio": "Arona"
@@ -187,6 +202,11 @@
   {
     "id": "88a73",
     "nome": "Scuola Popolare di Italiano della Ca' de Pop di Arona",
+    "presidio": "Arona"
+  },
+  {
+    "id": "b7a82",
+    "nome": "Telep Africa di Arona",
     "presidio": "Arona"
   },
   {
@@ -210,18 +230,13 @@
     "presidio": "Baveno"
   },
   {
-    "id": "a066b",
-    "nome": "Boy Scout Omegna",
-    "presidio": "Verbania - Intra"
-  },
-  {
-    "id": "f0140",
-    "nome": "Emergency - Gruppo di Verbania",
-    "presidio": "Verbania - Intra"
-  },
-  {
     "id": "38e6b",
     "nome": "21 marzo di Libera",
+    "presidio": "Verbania - Intra"
+  },
+  {
+    "id": "0bdb4",
+    "nome": "A.p.s. Manitese Verbania",
     "presidio": "Verbania - Intra"
   },
   {
@@ -252,6 +267,11 @@
   {
     "id": "5dca7",
     "nome": "AVAP - Associazione Volontari per Ammalati Psichici",
+    "presidio": "Verbania - Intra"
+  },
+  {
+    "id": "a066b",
+    "nome": "Boy Scout Omegna",
     "presidio": "Verbania - Intra"
   },
   {
@@ -295,6 +315,11 @@
     "presidio": "Verbania - Intra"
   },
   {
+    "id": "f0140",
+    "nome": "Emergency - Gruppo di Verbania",
+    "presidio": "Verbania - Intra"
+  },
+  {
     "id": "13445",
     "nome": "Genitori Upside Down",
     "presidio": "Verbania - Intra"
@@ -312,11 +337,6 @@
   {
     "id": "584f9",
     "nome": "LetterAltura",
-    "presidio": "Verbania - Intra"
-  },
-  {
-    "id": "0bdb4",
-    "nome": "A.p.s. Manitese Verbania",
     "presidio": "Verbania - Intra"
   },
   {

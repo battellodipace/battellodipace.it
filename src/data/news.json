@@ -1,5 +1,21 @@
 [
   {
+    "id": 5,
+    "data": "2025-10-03",
+    "titolo": "Disponibile il programma del Presidio di Angera",
+    "contenuto": "È online il programma completo del Presidio di Angera, prima tappa del Battello di Pace in programma sabato 11 ottobre alle ore 9:30. Il presidio sarà attivo nei pressi dell'imbarcadero di Angera, fine viale della Repubblica verso piazza della Vittoria. In programma musica dal vivo con il Gruppo Farfalhiña 'Canto per la Palestina', animazione di danze dal mondo con Arcadinoe Teatro/Sorrisi senza Confini, saluti istituzionali e testimonianze di Don Renato Sacco Pax Christi, Emergency e Scuole di Angera.",
+    "categoria": "Presìdi",
+    "link": "/angera",
+    "linkText": "Scopri il programma completo",
+    "materiali": [
+      {
+        "nome": "Locandina Angera",
+        "url": "/assets/presidi/angera.pdf",
+        "tipo": "PDF"
+      }
+    ]
+  },
+  {
     "id": 4,
     "data": "2025-09-30",
     "titolo": "Disponibile il programma del Presidio di Verbania Intra",
