@@ -329,6 +329,53 @@ export function PresidioPage({ presidio, onPageChange }: PresidioPageProps) {
                 </Card>
               )}
 
+              {presidio === 'angera' && (
+                <Card className="p-6">
+                  <div className="flex items-center space-x-2 mb-4">
+                    <FileText className="h-6 w-6 text-blue-600" />
+                    <h2 className="text-2xl font-bold text-gray-900">
+                      Approfondimenti
+                    </h2>
+                  </div>
+                  <p className="text-gray-600 mb-6">
+                    Scarica le schede di presentazione dei gruppi che si esibiranno al presidio
+                  </p>
+                  <div className="space-y-3">
+                    <div className="bg-gradient-to-r from-red-50 to-orange-50 border border-red-200 rounded-lg p-4">
+                      <h3 className="font-semibold text-gray-900 mb-2">Canto per la Palestina</h3>
+                      <p className="text-sm text-gray-600 mb-3">
+                        Gruppo Farfahiina - Musica dal vivo con chitarra e 2 voci cantanti
+                      </p>
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="w-full bg-white hover:bg-red-50"
+                        onClick={() => window.open('/assets/presidi/angera/scheda_farfahiina_canto_per_la_palestina_per_angera.pdf', '_blank')}
+                      >
+                        <Download className="h-4 w-4 mr-2" />
+                        Scarica Scheda Farfahiina
+                      </Button>
+                    </div>
+
+                    <div className="bg-gradient-to-r from-red-50 to-orange-50 border border-red-200 rounded-lg p-4">
+                      <h3 className="font-semibold text-gray-900 mb-2">Danziamo la Pace</h3>
+                      <p className="text-sm text-gray-600 mb-3">
+                        Arca di Noe Teatro / Sorrisi senza Confini - Danze popolari dal mondo
+                      </p>
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="w-full bg-white hover:bg-red-50"
+                        onClick={() => window.open('/assets/presidi/angera/danziamo_la_pace.pdf', '_blank')}
+                      >
+                        <Download className="h-4 w-4 mr-2" />
+                        Scarica Scheda Danze Popolari
+                      </Button>
+                    </div>
+                  </div>
+                </Card>
+              )}
+
               <Card className="p-6">
                 <div className="flex items-center space-x-2 mb-4">
                   <Heart className="h-6 w-6 text-red-500" />
@@ -386,24 +433,52 @@ export function PresidioPage({ presidio, onPageChange }: PresidioPageProps) {
               <Card className="p-6">
                 <div className="flex items-center space-x-2 mb-4">
                   <FileText className="h-5 w-5 text-blue-600" />
-                  <h3 className="font-semibold text-gray-900">Locandina Evento</h3>
+                  <h3 className="font-semibold text-gray-900">Documenti</h3>
                 </div>
                 <div className="space-y-3">
                   {data.documento ? (
-                    <Button 
-                      variant="outline" 
-                      size="sm" 
+                    <Button
+                      variant="outline"
+                      size="sm"
                       className="w-full"
                       onClick={() => window.open(data.documento, '_blank')}
                     >
                       <Download className="h-4 w-4 mr-2" />
-                      Scarica Info Dettagliate
+                      Locandina Presidio
                     </Button>
                   ) : (
                     <div className="flex items-center justify-center space-x-2 py-3 px-4 bg-gray-50 rounded-lg">
                       <Calendar className="h-4 w-4 text-gray-400" />
                       <span className="text-sm text-gray-500">Disponibile a breve</span>
                     </div>
+                  )}
+
+                  {presidio === 'angera' && (
+                    <>
+                      <div className="border-t pt-4 mt-1">
+                        <p className="text-xs text-gray-500 mb-2 font-semibold">Schede artisti</p>
+                        <div className="space-y-2">
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            className="w-full text-xs"
+                            onClick={() => window.open('/assets/presidi/angera/scheda_farfahiina_canto_per_la_palestina_per_angera.pdf', '_blank')}
+                          >
+                            <Download className="h-3 w-3 mr-2" />
+                            Gruppo Farfahiina
+                          </Button>
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            className="w-full text-xs"
+                            onClick={() => window.open('/assets/presidi/angera/danziamo_la_pace.pdf', '_blank')}
+                          >
+                            <Download className="h-3 w-3 mr-2" />
+                            Danze Popolari
+                          </Button>
+                        </div>
+                      </div>
+                    </>
                   )}
                 </div>
               </Card>
