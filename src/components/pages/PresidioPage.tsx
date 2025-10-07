@@ -398,7 +398,7 @@ export function PresidioPage({ presidio, onPageChange }: PresidioPageProps) {
                         <div className="flex-1">
                           <h3 className="font-semibold text-gray-900 mb-2">Parcheggi consigliati</h3>
                           <p className="text-sm text-gray-600 mb-3">
-                            Dove parcheggiare per raggiungere comodamente il porto di Intra
+                            Dove parcheggiare per raggiungere comodamente il presidio
                           </p>
                           <Button
                             variant="outline"
@@ -424,7 +424,7 @@ export function PresidioPage({ presidio, onPageChange }: PresidioPageProps) {
                         <div className="flex-1">
                           <h3 className="font-semibold text-gray-900 mb-2">Approdo del battello</h3>
                           <p className="text-sm text-gray-600 mb-3">
-                            Punto di arrivo del battello al porto di Intra
+                            Punto di attracco del battello
                           </p>
                           <Button
                             variant="outline"
