@@ -390,7 +390,7 @@ export function PresidioPage({ presidio, onPageChange }: PresidioPageProps) {
                     <div className="bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200 rounded-lg p-4">
                       <div className="flex gap-4">
                         <img
-                          src="/assets/presidi/verbania/parcheggi-consigliati.jpeg"
+                          src="/assets/presidi/verbania/parcheggi-consigliati-thumb.jpeg"
                           alt="Parcheggi consigliati"
                           className="w-12 h-12 object-cover rounded cursor-pointer flex-shrink-0"
                           onClick={() => window.open('/assets/presidi/verbania/parcheggi-consigliati.pdf', '_blank')}
@@ -416,7 +416,7 @@ export function PresidioPage({ presidio, onPageChange }: PresidioPageProps) {
                     <div className="bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200 rounded-lg p-4">
                       <div className="flex gap-4">
                         <img
-                          src="/assets/presidi/verbania/approdo-battello.jpeg"
+                          src="/assets/presidi/verbania/approdo-battello-thumb.jpeg"
                           alt="Approdo del battello"
                           className="w-12 h-12 object-cover rounded cursor-pointer flex-shrink-0"
                           onClick={() => window.open('/assets/presidi/verbania/approdo-battello.pdf', '_blank')}
@@ -442,7 +442,7 @@ export function PresidioPage({ presidio, onPageChange }: PresidioPageProps) {
                     <div className="bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200 rounded-lg p-4">
                       <div className="flex gap-4">
                         <img
-                          src="/assets/presidi/verbania/percorso-manifestazione.jpeg"
+                          src="/assets/presidi/verbania/percorso-manifestazione-thumb.jpeg"
                           alt="Percorso manifestazione"
                           className="w-12 h-12 object-cover rounded cursor-pointer flex-shrink-0"
                           onClick={() => window.open('/assets/presidi/verbania/percorso-manifestazione.pdf', '_blank')}
