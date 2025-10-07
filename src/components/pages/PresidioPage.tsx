@@ -97,11 +97,10 @@ export function PresidioPage({ presidio, onPageChange }: PresidioPageProps) {
       corteo: 'Partenza corteo verso Villa Maioni (Biblioteca)',
       interventi: [
         { nome: 'Raffaele Crocco', ruolo: 'Direttore dell\'Atlante delle guerre e dei conflitti nel mondo' },
-        { nome: 'Giuseppe Caravella', ruolo: 'Medici Senza Frontiere' },
         { nome: 'Don Angelo Nigro', ruolo: 'Testimonianza' },
         { nome: 'Coro San Martino di Vignone', ruolo: 'Canti di pace' }
       ],
-      documento: '/assets/presidi/verbania-intra.pdf'
+      documento: '/assets/presidi/verbania/verbania-intra.pdf'
     }
   };
 
@@ -376,6 +375,99 @@ export function PresidioPage({ presidio, onPageChange }: PresidioPageProps) {
                 </Card>
               )}
 
+              {presidio === 'verbania' && (
+                <Card className="p-6">
+                  <div className="flex items-center space-x-2 mb-4">
+                    <FileText className="h-6 w-6 text-blue-600" />
+                    <h2 className="text-2xl font-bold text-gray-900">
+                      Informazioni Pratiche
+                    </h2>
+                  </div>
+                  <p className="text-gray-600 mb-6">
+                    Scarica le mappe e le informazioni utili per raggiungere il presidio
+                  </p>
+                  <div className="space-y-3">
+                    <div className="bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200 rounded-lg p-4">
+                      <div className="flex gap-4">
+                        <img
+                          src="/assets/presidi/verbania/parcheggi-consigliati.jpeg"
+                          alt="Parcheggi consigliati"
+                          className="w-12 h-12 object-cover rounded cursor-pointer flex-shrink-0"
+                          onClick={() => window.open('/assets/presidi/verbania/parcheggi-consigliati.pdf', '_blank')}
+                        />
+                        <div className="flex-1">
+                          <h3 className="font-semibold text-gray-900 mb-2">Parcheggi consigliati</h3>
+                          <p className="text-sm text-gray-600 mb-3">
+                            Dove parcheggiare per raggiungere comodamente il porto di Intra
+                          </p>
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            className="w-full bg-white hover:bg-blue-50"
+                            onClick={() => window.open('/assets/presidi/verbania/parcheggi-consigliati.pdf', '_blank')}
+                          >
+                            <Download className="h-4 w-4 mr-2" />
+                            Scarica mappa parcheggi
+                          </Button>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200 rounded-lg p-4">
+                      <div className="flex gap-4">
+                        <img
+                          src="/assets/presidi/verbania/approdo-battello.jpeg"
+                          alt="Approdo del battello"
+                          className="w-12 h-12 object-cover rounded cursor-pointer flex-shrink-0"
+                          onClick={() => window.open('/assets/presidi/verbania/approdo-battello.pdf', '_blank')}
+                        />
+                        <div className="flex-1">
+                          <h3 className="font-semibold text-gray-900 mb-2">Approdo del battello</h3>
+                          <p className="text-sm text-gray-600 mb-3">
+                            Punto di arrivo del battello al porto di Intra
+                          </p>
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            className="w-full bg-white hover:bg-blue-50"
+                            onClick={() => window.open('/assets/presidi/verbania/approdo-battello.pdf', '_blank')}
+                          >
+                            <Download className="h-4 w-4 mr-2" />
+                            Scarica mappa approdo
+                          </Button>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200 rounded-lg p-4">
+                      <div className="flex gap-4">
+                        <img
+                          src="/assets/presidi/verbania/percorso-manifestazione.jpeg"
+                          alt="Percorso manifestazione"
+                          className="w-12 h-12 object-cover rounded cursor-pointer flex-shrink-0"
+                          onClick={() => window.open('/assets/presidi/verbania/percorso-manifestazione.pdf', '_blank')}
+                        />
+                        <div className="flex-1">
+                          <h3 className="font-semibold text-gray-900 mb-2">Percorso manifestazione</h3>
+                          <p className="text-sm text-gray-600 mb-3">
+                            Itinerario del corteo dal porto a Villa Maioni
+                          </p>
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            className="w-full bg-white hover:bg-blue-50"
+                            onClick={() => window.open('/assets/presidi/verbania/percorso-manifestazione.pdf', '_blank')}
+                          >
+                            <Download className="h-4 w-4 mr-2" />
+                            Scarica percorso
+                          </Button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </Card>
+              )}
+
               <Card className="p-6">
                 <div className="flex items-center space-x-2 mb-4">
                   <Heart className="h-6 w-6 text-red-500" />
@@ -475,6 +567,43 @@ export function PresidioPage({ presidio, onPageChange }: PresidioPageProps) {
                           >
                             <Download className="h-3 w-3 mr-2" />
                             Danze Popolari
+                          </Button>
+                        </div>
+                      </div>
+                    </>
+                  )}
+
+                  {presidio === 'verbania' && (
+                    <>
+                      <div className="border-t pt-4 mt-1">
+                        <p className="text-xs text-gray-500 mb-2 font-semibold">Informazioni pratiche</p>
+                        <div className="space-y-2">
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            className="w-full text-xs"
+                            onClick={() => window.open('/assets/presidi/verbania/parcheggi-consigliati.pdf', '_blank')}
+                          >
+                            <Download className="h-3 w-3 mr-2" />
+                            Parcheggi consigliati
+                          </Button>
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            className="w-full text-xs"
+                            onClick={() => window.open('/assets/presidi/verbania/approdo-battello.pdf', '_blank')}
+                          >
+                            <Download className="h-3 w-3 mr-2" />
+                            Approdo del battello
+                          </Button>
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            className="w-full text-xs"
+                            onClick={() => window.open('/assets/presidi/verbania/percorso-manifestazione.pdf', '_blank')}
+                          >
+                            <Download className="h-3 w-3 mr-2" />
+                            Percorso manifestazione
                           </Button>
                         </div>
                       </div>
