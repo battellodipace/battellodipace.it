@@ -1,5 +1,13 @@
 [
   {
+    "id": 7,
+    "data": "2025-10-09",
+    "titolo": "Ultimi posti disponibili per l'imbarco sul battello",
+    "contenuto": "Sono disponibili gli ultimissimi posti per l'imbarco sul battello. Ricordiamo che l'esperienza sul battello è un'esperienza partecipativa che fungerà come filo conduttore di tutta la giornata e per tutti i presidi. L'imbarco sarà ad Angera. Dopo un percorso che toccherà tutti i vari presidi, il battello rientrerà in sera ad Angera. Per richiedere ulteriori informazioni o per inviare la propria richiesta di partecipazione al battello, inviare una mail a info@battellodipace.it.",
+    "categoria": "Battello",
+    "materiali": []
+  },
+  {
     "id": 6,
     "data": "2025-10-03",
     "titolo": "Disponibile il programma del Presidio di Arona",
